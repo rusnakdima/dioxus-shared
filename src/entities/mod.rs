@@ -6,6 +6,7 @@
 pub mod user;
 pub mod session;
 pub mod config;
+pub mod registry;
 
 pub use user::{User, UserRole};
 pub use session::Session;

@@ -9,11 +9,22 @@ use std::sync::{Arc, RwLock};
 
 /// Describes a dynamic entity: its name, backing collection, and the JSON
 /// Schema used for runtime validation of entity documents.
+///
+/// Construct with [`EntitySchema::new`]. Validation rules live inside the
+/// JSON Schema stored in the `schema` field, so no extra validator hook is
+/// needed on the struct itself.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct EntitySchema {
   pub name: String,
   pub collection: String,
   pub schema: serde_json::Value,
+}
+
+impl EntitySchema {
+  /// Creates a new entity schema definition.
+  pub fn new(name: impl Into<String>, collection: impl Into<String>, schema: serde_json::Value) -> Self {
+    Self { name: name.into(), collection: collection.into(), schema }
+  }
 }
 
 /// Thread-safe registry of entity schemas keyed by entity name.

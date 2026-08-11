@@ -69,6 +69,7 @@ pub fn get_theme_css() -> &'static str {
 
 // Re-export commonly used types
 pub use mcp::{JsonRpcError, JsonRpcId, JsonRpcRequest, JsonRpcResponse};
+pub use entities::{EntitySchema, EntityRegistry};
 pub use algorithms::{algo_execute, Algorithm, AlgorithmRegistry, AlgorithmInput, AlgorithmOutput};
 pub use crud::{CrudFilter, CrudQuery, CrudResult, CrudService, PaginatedResult};
 pub use env::EnvConfig;

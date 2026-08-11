@@ -11,3 +11,4 @@ pub mod registry;
 pub use user::{User, UserRole};
 pub use session::Session;
 pub use config::AppConfig;
+pub use registry::{EntitySchema, EntityRegistry};

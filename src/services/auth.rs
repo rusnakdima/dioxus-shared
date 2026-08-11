@@ -23,7 +23,9 @@
 use dioxus::prelude::{Signal, ReadableExt, WritableExt};
 
 #[cfg(feature = "dioxus-ui")]
-use crate::entities::{Session, User};
+use crate::entities::session::{session_is_expired, Session};
+#[cfg(feature = "dioxus-ui")]
+use crate::entities::User;
 
 /// Signal-backed authentication service. Available only with `dioxus-ui` feature.
 #[cfg(feature = "dioxus-ui")]
@@ -72,7 +74,7 @@ impl AuthService {
     /// Returns `true` if a non-expired session is present.
     pub fn is_authenticated(&self) -> bool {
         if let Some(session) = self.session.read().as_ref() {
-            !session.is_expired()
+            !session_is_expired(session)
         } else {
             false
         }

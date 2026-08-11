@@ -15,8 +15,7 @@ pub struct Session {
     pub expires_at: DateTime<Utc>,
 }
 
-impl Session {
-    pub fn is_expired(&self) -> bool {
-        self.expires_at < Utc::now()
-    }
+/// Returns `true` if the session has expired.
+pub fn session_is_expired(session: &Session) -> bool {
+    session.expires_at < Utc::now()
 }

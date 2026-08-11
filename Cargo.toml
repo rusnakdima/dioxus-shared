@@ -49,11 +49,15 @@ dotenvy = { version = "0.15", optional = true }
 dioxus = { version = "0.8.0-alpha.0", optional = true, features = ["html", "macro", "hooks", "signals", "router", "lib"] }
 dioxus-core = { version = "0.8.0-alpha.0", optional = true }
 dioxus-html = { version = "0.8.0-alpha.0", optional = true }
+sha1 = "0.11.0"
+tracing = "0.1.44"
+base64 = "0.22"
 
 [features]
 default = ["dotenvy", "dioxus-ui"]
 dotenvy = ["dep:dotenvy"]
 dioxus-ui = ["dioxus", "dioxus-core", "dioxus-html"]
+dioxus-desktop = []
 
 [dev-dependencies]
 tokio = { version = "1", features = ["rt"] }

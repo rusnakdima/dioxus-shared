@@ -1,7 +1,7 @@
 //! AppConfig entity
 
-use serde::{Deserialize, Serialize};
 use crate::themes::ThemeVariant;
+use serde::{Deserialize, Serialize};
 use ts_rs::TS;
 
 #[derive(Debug, Clone, Serialize, Deserialize, TS)]

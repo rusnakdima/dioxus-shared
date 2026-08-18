@@ -5,14 +5,14 @@ pub mod search;
 pub mod sorting;
 pub mod validation;
 
-pub use registry::{Algorithm, AlgorithmRegistry, AlgorithmInput, AlgorithmOutput};
+pub use registry::{Algorithm, AlgorithmInput, AlgorithmOutput, AlgorithmRegistry};
 
 pub use graph::Graph;
 pub use sanitization::{sanitize_for_mongo, sanitize_for_mongo_owned, sanitize_for_overlay};
 pub use search::SearchAlgorithm;
 pub use sorting::{
-  bubble_sort, bubble_sort_by, insertion_sort, insertion_sort_by, merge_sort, merge_sort_by,
-  quick_sort, quick_sort_by,
+    bubble_sort, bubble_sort_by, insertion_sort, insertion_sort_by, merge_sort, merge_sort_by,
+    quick_sort, quick_sort_by,
 };
 pub use validation::ValidationAlgorithm;
 
@@ -34,7 +34,7 @@ pub use validation::ValidationAlgorithm;
 ///   the algorithm is known at compile time. Allows dead-code elimination and
 ///   better inlining. Preferred for hot paths where performance matters.
 ///
-/// ```rust
+/// ```rust,ignore
 /// // Runtime algorithm selection (algo_execute)
 /// let registry = AlgorithmRegistry::new();
 /// let result = algo_execute(&registry, "bubble_sort", data.into(), None, None)?;
@@ -65,94 +65,117 @@ pub use validation::ValidationAlgorithm;
 //   let sorted = sorting::merge_sort(data, &sorting::SortBy::Field("name", sorting::SortOrder::Asc));
 //
 pub fn algo_execute(
-  registry: &AlgorithmRegistry,
-  name: &str,
-  data: serde_json::Value,
-  field: Option<&str>,
-  order: Option<&str>,
+    registry: &AlgorithmRegistry,
+    name: &str,
+    data: serde_json::Value,
+    field: Option<&str>,
+    order: Option<&str>,
 ) -> Result<serde_json::Value, String> {
-  let input = AlgorithmInput {
-    data,
-    field: field.map(String::from),
-    order: order.map(String::from),
-  };
-  registry
-    .execute(name, input)
-    .map(|out| out.data)
-    .ok_or_else(|| format!("algorithm not found: {name}"))
+    let input = AlgorithmInput {
+        data,
+        field: field.map(String::from),
+        order: order.map(String::from),
+    };
+    registry
+        .execute(name, input)
+        .map(|out| out.data)
+        .ok_or_else(|| format!("algorithm not found: {name}"))
 }
 
 #[cfg(test)]
 mod tests {
-  use super::*;
+    use super::*;
 
-  #[test]
-  fn test_validate_input_valid() {
-    assert!(ValidationAlgorithm::validate_input("hello", 10));
-    assert!(!ValidationAlgorithm::validate_input("", 10)); // empty string is not valid
-  }
+    #[test]
+    fn test_validate_input_valid() {
+        assert!(ValidationAlgorithm::validate_input("hello", 10));
+        assert!(!ValidationAlgorithm::validate_input("", 10)); // empty string is not valid
+    }
 
-  #[test]
-  fn test_validate_input_exceeds_max_length() {
-    assert!(!ValidationAlgorithm::validate_input("hello world", 5));
-  }
+    #[test]
+    fn test_validate_input_exceeds_max_length() {
+        assert!(!ValidationAlgorithm::validate_input("hello world", 5));
+    }
 
-  #[test]
-  fn test_validate_input_empty() {
-    assert!(!ValidationAlgorithm::validate_input("", 10));
-  }
+    #[test]
+    fn test_validate_input_empty() {
+        assert!(!ValidationAlgorithm::validate_input("", 10));
+    }
 
-  #[test]
-  fn test_validate_input_exact_length() {
-    assert!(ValidationAlgorithm::validate_input("hello", 5));
-  }
+    #[test]
+    fn test_validate_input_exact_length() {
+        assert!(ValidationAlgorithm::validate_input("hello", 5));
+    }
 
-  #[test]
-  fn test_validate_email_valid() {
-    assert!(ValidationAlgorithm::validate_email("test@example.com"));
-    assert!(ValidationAlgorithm::validate_email("user.name@domain.co.uk"));
-    assert!(ValidationAlgorithm::validate_email("a@b.c"));
-  }
+    #[test]
+    fn test_validate_email_valid() {
+        assert!(ValidationAlgorithm::validate_email("test@example.com"));
+        assert!(ValidationAlgorithm::validate_email(
+            "user.name@domain.co.uk"
+        ));
+        assert!(ValidationAlgorithm::validate_email("a@b.c"));
+    }
 
-  #[test]
-  fn test_validate_email_invalid() {
-    assert!(!ValidationAlgorithm::validate_email("invalid"));
-    assert!(!ValidationAlgorithm::validate_email("no@domain"));
-    assert!(!ValidationAlgorithm::validate_email("")); // empty string is invalid
-  }
+    #[test]
+    fn test_validate_email_invalid() {
+        assert!(!ValidationAlgorithm::validate_email("invalid"));
+        assert!(!ValidationAlgorithm::validate_email("no@domain"));
+        assert!(!ValidationAlgorithm::validate_email("")); // empty string is invalid
+    }
 
-  #[test]
-  fn test_sanitize_input_keeps_valid_chars() {
-    assert_eq!(ValidationAlgorithm::sanitize_input("Hello123"), "Hello123");
-    assert_eq!(ValidationAlgorithm::sanitize_input("hello world"), "hello world");
-    // Note: '.' is not alphanumeric, space, or hyphen, so it's removed
-    assert_eq!(ValidationAlgorithm::sanitize_input("file-name.txt"), "file-nametxt");
-  }
+    #[test]
+    fn test_sanitize_input_keeps_valid_chars() {
+        assert_eq!(ValidationAlgorithm::sanitize_input("Hello123"), "Hello123");
+        assert_eq!(
+            ValidationAlgorithm::sanitize_input("hello world"),
+            "hello world"
+        );
+        // Note: '.' is not alphanumeric, space, or hyphen, so it's removed
+        assert_eq!(
+            ValidationAlgorithm::sanitize_input("file-name.txt"),
+            "file-nametxt"
+        );
+    }
 
-  #[test]
-  fn test_sanitize_input_removes_invalid_chars() {
-    assert_eq!(ValidationAlgorithm::sanitize_input("hello;world"), "helloworld");
-    assert_eq!(ValidationAlgorithm::sanitize_input("test@email.com"), "testemailcom");
-    assert_eq!(ValidationAlgorithm::sanitize_input("user'name"), "username");
-    assert_eq!(ValidationAlgorithm::sanitize_input("path/to/file"), "pathtofile");
-  }
+    #[test]
+    fn test_sanitize_input_removes_invalid_chars() {
+        assert_eq!(
+            ValidationAlgorithm::sanitize_input("hello;world"),
+            "helloworld"
+        );
+        assert_eq!(
+            ValidationAlgorithm::sanitize_input("test@email.com"),
+            "testemailcom"
+        );
+        assert_eq!(ValidationAlgorithm::sanitize_input("user'name"), "username");
+        assert_eq!(
+            ValidationAlgorithm::sanitize_input("path/to/file"),
+            "pathtofile"
+        );
+    }
 
-  #[test]
-  fn test_sanitize_input_preserves_spaces_and_hyphens() {
-    assert_eq!(ValidationAlgorithm::sanitize_input("hello - world"), "hello - world");
-    assert_eq!(ValidationAlgorithm::sanitize_input("user-name-123"), "user-name-123");
-  }
+    #[test]
+    fn test_sanitize_input_preserves_spaces_and_hyphens() {
+        assert_eq!(
+            ValidationAlgorithm::sanitize_input("hello - world"),
+            "hello - world"
+        );
+        assert_eq!(
+            ValidationAlgorithm::sanitize_input("user-name-123"),
+            "user-name-123"
+        );
+    }
 
-  #[test]
-  fn test_sanitize_input_unicode_chars_removed() {
-    // Unicode chars that are alphanumeric pass through
-    assert_eq!(ValidationAlgorithm::sanitize_input("café"), "café");
-    assert_eq!(ValidationAlgorithm::sanitize_input("naïve"), "naïve");
-  }
+    #[test]
+    fn test_sanitize_input_unicode_chars_removed() {
+        // Unicode chars that are alphanumeric pass through
+        assert_eq!(ValidationAlgorithm::sanitize_input("café"), "café");
+        assert_eq!(ValidationAlgorithm::sanitize_input("naïve"), "naïve");
+    }
 
-  #[test]
-  fn test_sanitize_input_empty() {
-    assert_eq!(ValidationAlgorithm::sanitize_input(""), "");
-    assert_eq!(ValidationAlgorithm::sanitize_input("!@#$%"), "");
-  }
+    #[test]
+    fn test_sanitize_input_empty() {
+        assert_eq!(ValidationAlgorithm::sanitize_input(""), "");
+        assert_eq!(ValidationAlgorithm::sanitize_input("!@#$%"), "");
+    }
 }

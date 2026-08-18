@@ -1,0 +1,1635 @@
+{
+  "app_id": "voiceassistant",
+  "version": "1.0.0",
+  "pages": [
+    {
+      "id": "home",
+      "title": "Home",
+      "description": null,
+      "route": "/",
+      "layout": "mobile",
+      "elements": [
+        {
+          "id": "bottom-nav",
+          "component": "card",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "align": "center",
+            "variant": "pill"
+          },
+          "classes": "fixed bottom-4 left-1/2 -translate-x-1/2 z-40 flex items-center gap-2 rounded-full px-4 py-2 shadow-neu-flat bg-base-200",
+          "children": [
+            {
+              "id": "nav-home",
+              "component": "button",
+              "grid_position": {
+                "column": 0,
+                "row": 0,
+                "col_span": 0,
+                "row_span": 0,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {
+                "label": "Home",
+                "icon": "mic",
+                "route": "/home"
+              },
+              "classes": "nav-pill",
+              "children": [],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            },
+            {
+              "id": "nav-vlm",
+              "component": "button",
+              "grid_position": {
+                "column": 0,
+                "row": 0,
+                "col_span": 0,
+                "row_span": 0,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {
+                "label": "VLM",
+                "route": "/vlm",
+                "icon": "image"
+              },
+              "classes": "nav-pill",
+              "children": [],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            },
+            {
+              "id": "nav-command",
+              "component": "button",
+              "grid_position": {
+                "column": 0,
+                "row": 0,
+                "col_span": 0,
+                "row_span": 0,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {
+                "route": "/command",
+                "label": "Commands",
+                "icon": "terminal"
+              },
+              "classes": "nav-pill",
+              "children": [],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            },
+            {
+              "id": "nav-settings",
+              "component": "button",
+              "grid_position": {
+                "column": 0,
+                "row": 0,
+                "col_span": 0,
+                "row_span": 0,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {
+                "route": "/settings",
+                "icon": "settings",
+                "label": "Settings"
+              },
+              "classes": "nav-pill",
+              "children": [],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            }
+          ],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "floating-buttons",
+          "component": "card",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {},
+          "classes": "fixed right-4 top-1/2 -translate-y-1/2 z-30 flex flex-col gap-3",
+          "children": [
+            {
+              "id": "fab-debug",
+              "component": "button",
+              "grid_position": {
+                "column": 0,
+                "row": 0,
+                "col_span": 0,
+                "row_span": 0,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {
+                "label": "D",
+                "route": "/debug",
+                "icon": "bug_report"
+              },
+              "classes": "neu-fab shadow-neu-raised",
+              "children": [],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            },
+            {
+              "id": "fab-character",
+              "component": "button",
+              "grid_position": {
+                "column": 0,
+                "row": 0,
+                "col_span": 0,
+                "row_span": 0,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {
+                "route": "/character",
+                "label": "C",
+                "icon": "person"
+              },
+              "classes": "neu-fab shadow-neu-raised",
+              "children": [],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            },
+            {
+              "id": "fab-chat",
+              "component": "button",
+              "grid_position": {
+                "column": 0,
+                "row": 0,
+                "col_span": 0,
+                "row_span": 0,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {
+                "icon": "chat"
+              },
+              "classes": "neu-fab shadow-neu-raised",
+              "children": [],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            }
+          ],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "toast-outlet",
+          "component": "toast",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "autoDismissMs": 4000,
+            "position": "bottom-center"
+          },
+          "classes": "fixed bottom-24 left-1/2 -translate-x-1/2 z-50 pointer-events-none",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "home-hero",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "VoiceAssistant",
+            "subtitle": "Press the mic and speak"
+          },
+          "classes": "relative w-full max-w-3xl mx-auto p-10 rounded-3xl bg-gradient-to-br from-primary/10 via-base-200 to-secondary/10 shadow-neu-flat",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "home-mic",
+          "component": "button",
+          "grid_position": {
+            "column": 6,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "size": "xl",
+            "state": "idle",
+            "icon": "mic"
+          },
+          "classes": "absolute inset-0 flex items-center justify-center",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "mobile",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "home-page",
+      "title": "Home",
+      "description": null,
+      "route": "/home",
+      "layout": "mobile",
+      "elements": [
+        {
+          "id": "home-hero",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "VoiceAssistant",
+            "subtitle": "Press the mic and speak"
+          },
+          "classes": "relative w-full max-w-3xl mx-auto p-10 rounded-3xl bg-gradient-to-br from-primary/10 via-base-200 to-secondary/10 shadow-neu-flat",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "home-mic",
+          "component": "button",
+          "grid_position": {
+            "column": 6,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "state": "idle",
+            "size": "xl",
+            "icon": "mic"
+          },
+          "classes": "absolute inset-0 flex items-center justify-center",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "mobile",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "vlm-page",
+      "title": "Vision Language Model",
+      "description": null,
+      "route": "/vlm",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "vlm-controls",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Capture"
+          },
+          "classes": "p-6 rounded-2xl bg-base-100 shadow-neu-flat",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "vlm-capture-mode",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "options": [
+              "screen",
+              "window"
+            ],
+            "value": "screen",
+            "label": "Capture mode",
+            "variant": "cards"
+          },
+          "classes": "w-full mb-4",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "vlm-window-picker",
+          "component": "select",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "disabledWhen": "capture_mode != 'window'",
+            "options": "windows[]",
+            "label": "Target window",
+            "placeholder": "Select a window"
+          },
+          "classes": "w-full mb-4",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "vlm-wake-word",
+          "component": "badge",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "neutral",
+            "label": "Wake word: jarvis"
+          },
+          "classes": "mb-4",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "vlm-toggle",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Start listening",
+            "icon": "mic",
+            "fullWidth": true,
+            "variant": "primary"
+          },
+          "classes": "w-full mb-4",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "vlm-prompt",
+          "component": "textarea",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "placeholder": "Describe what to do with the capture…",
+            "rows": 3,
+            "label": "Prompt"
+          },
+          "classes": "w-full",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "vlm-preview",
+          "component": "card",
+          "grid_position": {
+            "column": 7,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Latest capture"
+          },
+          "classes": "p-6 rounded-2xl bg-base-100 shadow-neu-flat",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "vlm-screenshot",
+          "component": "card",
+          "grid_position": {
+            "column": 7,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Latest capture",
+            "content": "vlm.last_capture.data_url"
+          },
+          "classes": "w-full rounded-xl shadow-neu-inset",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "vlm-timestamp",
+          "component": "badge",
+          "grid_position": {
+            "column": 7,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Captured 2s ago",
+            "variant": "subtle"
+          },
+          "classes": "mt-3",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "vlm-response",
+          "component": "card",
+          "grid_position": {
+            "column": 7,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "subtitle": "vlm.last_response",
+            "title": "Last VLM response"
+          },
+          "classes": "mt-4 p-4 rounded-xl bg-base-200 shadow-neu-inset",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "command-page",
+      "title": "Command Palette",
+      "description": null,
+      "route": "/command",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "command-toolbar",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Voice commands"
+          },
+          "classes": "p-4 rounded-2xl bg-base-100 shadow-neu-flat",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "command-search",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "search",
+            "placeholder": "Search commands…",
+            "debounceMs": 150
+          },
+          "classes": "w-full",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "command-language",
+          "component": "select",
+          "grid_position": {
+            "column": 9,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "options": [
+              "en",
+              "de",
+              "fr",
+              "es",
+              "ru"
+            ],
+            "label": "Language",
+            "value": "en"
+          },
+          "classes": "w-full",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "command-refresh",
+          "component": "button",
+          "grid_position": {
+            "column": 11,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "secondary",
+            "label": "",
+            "icon": "refresh"
+          },
+          "classes": "w-full",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "command-add",
+          "component": "button",
+          "grid_position": {
+            "column": 12,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "add",
+            "variant": "primary",
+            "label": ""
+          },
+          "classes": "w-full",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "command-list",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "rows": "commands.filtered",
+            "columns": [
+              "phrase",
+              "action",
+              "language"
+            ],
+            "searchable": true,
+            "dragReorder": true,
+            "actions": [
+              "edit",
+              "delete"
+            ]
+          },
+          "classes": "w-full",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "command-delete-confirm",
+          "component": "div",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Delete command?",
+            "message": "This cannot be undone.",
+            "variant": "danger",
+            "open": "ui.delete_command_open"
+          },
+          "classes": "modal-overlay",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "settings-page",
+      "title": "Settings",
+      "description": null,
+      "route": "/settings",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "settings-theme",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Appearance"
+          },
+          "classes": "p-4 rounded-2xl bg-base-100 shadow-neu-flat flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-theme-toggle",
+          "component": "switch",
+          "grid_position": {
+            "column": 12,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Dark mode",
+            "checked": "theme.mode === 'dark'"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-tabs",
+          "component": "tabs",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "tabs": [
+              "ai-providers",
+              "stt-models",
+              "tts",
+              "voice",
+              "character-window",
+              "debug-window"
+            ]
+          },
+          "classes": "w-full",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-tab-ai-providers",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "AI Providers"
+          },
+          "classes": "w-full",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-ai-api-key",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "placeholder": "sk-…",
+            "label": "OpenAI API key",
+            "type": "password"
+          },
+          "classes": "w-full",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-tab-stt",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "STT Models"
+          },
+          "classes": "w-full",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-stt-path",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Model path",
+            "placeholder": "/models/vosk-en"
+          },
+          "classes": "w-full mb-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-stt-validate",
+          "component": "button",
+          "grid_position": {
+            "column": 9,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Validate",
+            "variant": "secondary"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-stt-download",
+          "component": "button",
+          "grid_position": {
+            "column": 11,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Download",
+            "icon": "download",
+            "variant": "primary"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-tab-tts",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 7,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Text-to-Speech"
+          },
+          "classes": "w-full",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-tab-voice",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 8,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Voice"
+          },
+          "classes": "w-full",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-voice-wake",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 9,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Wake word",
+            "value": "jarvis"
+          },
+          "classes": "w-full",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-voice-timeout",
+          "component": "input",
+          "grid_position": {
+            "column": 7,
+            "row": 9,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "value": 7,
+            "label": "Listening timeout (seconds)",
+            "type": "number"
+          },
+          "classes": "w-full",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-voice-whitelist",
+          "component": "textarea",
+          "grid_position": {
+            "column": 1,
+            "row": 10,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Audio whitelist (apps)",
+            "rows": 5,
+            "component": "app-audio-whitelist",
+            "placeholder": "firefox\nspotify\n…"
+          },
+          "classes": "w-full",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-tab-character",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 11,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Character window"
+          },
+          "classes": "w-full",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-tab-debug",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 12,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Debug window"
+          },
+          "classes": "w-full",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "character-page",
+      "title": "Character",
+      "description": null,
+      "route": "/character",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "character-loader",
+          "component": "div",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Loading model…",
+            "value": "character.load_progress",
+            "max": 100,
+            "indeterminate": false
+          },
+          "classes": "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-64",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "character-back",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "arrow_back",
+            "label": "Back",
+            "variant": "secondary"
+          },
+          "classes": "absolute top-4 left-4 z-20 md:hidden",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "character-emotion-state",
+          "component": "badge",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "states": [
+              "idle",
+              "happy",
+              "sad",
+              "surprised",
+              "angry",
+              "thinking",
+              "listening",
+              "talking"
+            ],
+            "label": "character.emotion",
+            "variant": "primary"
+          },
+          "classes": "absolute top-4 right-4 z-20",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "debug-page",
+      "title": "Debug",
+      "description": null,
+      "route": "/debug",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "debug-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Debug log",
+            "subtitle": "Inspect STT / TTS / VLM events"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "debug-filters",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Filters"
+          },
+          "classes": "p-3 rounded-2xl bg-base-100 shadow-neu-flat",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "debug-level-selector",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Log level",
+            "options": [
+              "debug",
+              "info",
+              "warn",
+              "error"
+            ],
+            "value": "info"
+          },
+          "classes": "w-full",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "debug-log-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Entries"
+          },
+          "classes": "p-0 rounded-2xl bg-base-100 shadow-neu-flat overflow-hidden",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "debug-log-table",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "virtualScroll": true,
+            "columns": [
+              "timestamp",
+              "level",
+              "source",
+              "message"
+            ],
+            "striped": true,
+            "dense": true,
+            "rows": "logs.filtered"
+          },
+          "classes": "w-full",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "chat-overlay",
+      "title": "Chat Overlay",
+      "description": null,
+      "route": "/chat",
+      "layout": "overlay",
+      "elements": [
+        {
+          "id": "chat-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "chat",
+            "title": "Chat"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "chat-empty",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Open chat",
+            "icon": "chat_bubble_outline",
+            "message": "Start a conversation to see messages here."
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "chat-messages",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "autoScroll": true,
+            "virtualScroll": true,
+            "rows": "chat.messages",
+            "striped": false,
+            "columns": [
+              "avatar",
+              "sender",
+              "message",
+              "timestamp"
+            ]
+          },
+          "classes": "w-full",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "overlay",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "not-found-page",
+      "title": "Not Found",
+      "description": null,
+      "route": "/404",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "not-found-empty-state",
+          "component": "div",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Page Not Found",
+            "message": "The page you're looking for doesn't exist."
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "go-home-button",
+          "component": "button",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "primary",
+            "label": "Go Home"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "schema-error-page",
+      "title": "Schema Error",
+      "description": null,
+      "route": "/schema-error",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "schema-error-empty-state",
+          "component": "div",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Schema Not Found",
+            "message": "The schema could not be loaded."
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "reload-button",
+          "component": "button",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "primary",
+            "label": "Reload"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    }
+  ],
+  "shortcuts": [],
+  "modals": []
+}

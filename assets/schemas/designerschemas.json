@@ -1,0 +1,2130 @@
+{
+  "app_id": "designer",
+  "version": "1.0.0",
+  "pages": [
+    {
+      "id": "designer-page",
+      "title": "Designer",
+      "description": null,
+      "route": "/designer",
+      "layout": "studio",
+      "elements": [
+        {
+          "id": "top-header",
+          "component": "header",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "appName": "Designer",
+            "appIcon": "design_services"
+          },
+          "classes": "flex items-center justify-between px-6 py-3 bg-base-100 border-b border-base-300 shadow-sm",
+          "children": [
+            {
+              "id": "header-logo",
+              "component": "chip",
+              "grid_position": {
+                "column": 0,
+                "row": 0,
+                "col_span": 0,
+                "row_span": 0,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {
+                "label": "Designer",
+                "icon": "design_services"
+              },
+              "classes": "flex items-center gap-2 text-xl font-semibold text-primary",
+              "children": [],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            },
+            {
+              "id": "header-project-selector",
+              "component": "select",
+              "grid_position": {
+                "column": 0,
+                "row": 0,
+                "col_span": 0,
+                "row_span": 0,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {
+                "placeholder": "Select project",
+                "bind": {
+                  "store": "designer-store",
+                  "field": "active_project_id"
+                },
+                "icon": "folder_open",
+                "label": "Active project"
+              },
+              "classes": "min-w-64",
+              "children": [],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            },
+            {
+              "id": "header-sync-status",
+              "component": "badge",
+              "grid_position": {
+                "column": 0,
+                "row": 0,
+                "col_span": 0,
+                "row_span": 0,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {
+                "icon": "cloud_sync",
+                "bind": {
+                  "store": "sync-store",
+                  "field": "status"
+                }
+              },
+              "classes": "gap-2 px-3 py-1 rounded-full",
+              "children": [],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            },
+            {
+              "id": "header-save",
+              "component": "button",
+              "grid_position": {
+                "column": 0,
+                "row": 0,
+                "col_span": 0,
+                "row_span": 0,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {
+                "label": "Save schema",
+                "color": "primary",
+                "icon": "save",
+                "variant": "filled"
+              },
+              "classes": "ml-auto",
+              "children": [],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            }
+          ],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "left-sidebar",
+          "component": "sidebar",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "collapsible": true
+          },
+          "classes": "flex flex-col w-64 h-full bg-base-200 border-r border-base-300 overflow-y-auto",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "designer-chrome",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {},
+          "classes": "w-full",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "designer-canvas-toolbar",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {},
+          "classes": "w-full flex items-center justify-between px-4 py-2 bg-base-100 border-b border-base-300",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "designer-palette",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {},
+          "classes": "h-full bg-base-200 border-r border-base-300 overflow-y-auto",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "designer-canvas",
+          "component": "div",
+          "grid_position": {
+            "column": 4,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "acceptsDrop": true,
+            "gridColumns": 12
+          },
+          "classes": "h-full bg-base-100 p-6 overflow-auto",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "designer-properties",
+          "component": "div",
+          "grid_position": {
+            "column": 10,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {},
+          "classes": "h-full bg-base-200 border-l border-base-300 overflow-y-auto",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "studio",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "component-editor-page",
+      "title": "Component Editor",
+      "description": null,
+      "route": "/component-editor",
+      "layout": "with-both",
+      "elements": [
+        {
+          "id": "ce-page-container",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {},
+          "classes": "w-full",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "ce-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Component Editor",
+            "icon": "code",
+            "subtitle": "Inspect and edit a single component definition"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "ce-card-preview",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "preview",
+            "title": "Live Preview"
+          },
+          "classes": "p-6",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "ce-card-props",
+          "component": "div",
+          "grid_position": {
+            "column": 7,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Props",
+            "mode": "compact"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "ce-card-events",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 9,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Event Handlers",
+            "icon": "flash_on"
+          },
+          "classes": "p-6",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-both",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "canvas-page",
+      "title": "Full Canvas",
+      "description": null,
+      "route": "/canvas-page",
+      "layout": "with-both",
+      "elements": [
+        {
+          "id": "cp-toolbar",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {},
+          "classes": "w-full sticky top-0 z-10 bg-base-100 border-b border-base-300",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "cp-canvas",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "acceptsDrop": true,
+            "gridColumns": 12,
+            "snap": true,
+            "showGrid": true
+          },
+          "classes": "w-full min-h-screen bg-base-100 p-8 overflow-auto",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-both",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "component-palette-page",
+      "title": "Component Palette",
+      "description": null,
+      "route": "/component-palette",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "pal-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "subtitle": "Drag any component onto the canvas",
+            "title": "Component Palette",
+            "icon": "widgets"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "pal-search",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "search",
+            "placeholder": "Search 35+ components"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "pal-segment",
+          "component": "div",
+          "grid_position": {
+            "column": 7,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "options": [
+              "All",
+              "Layout",
+              "Form",
+              "Data",
+              "Feedback"
+            ],
+            "value": "All"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "pal-list",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "showPreview": true,
+            "draggable": true,
+            "groupByCategory": true
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "properties-panel-page",
+      "title": "Properties Panel",
+      "description": null,
+      "route": "/properties-panel",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "pp-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "tune",
+            "title": "Properties",
+            "subtitle": "Edit selected element"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "pp-tabs",
+          "component": "tabs",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "tabs": [
+              {
+                "id": "general",
+                "label": "General"
+              },
+              {
+                "id": "style",
+                "label": "Style"
+              },
+              {
+                "id": "events",
+                "label": "Events"
+              },
+              {
+                "id": "data",
+                "label": "Data"
+              }
+            ],
+            "active": "general"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "pp-form",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "bind": {
+              "store": "designer-store",
+              "field": "selected_element"
+            },
+            "mode": "full"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "preview-panel-page",
+      "title": "Preview Panel",
+      "description": null,
+      "route": "/preview-panel",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "prv-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "subtitle": "Render the active schema",
+            "title": "Live Preview",
+            "icon": "play_circle"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "prv-segment",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "options": [
+              "Desktop",
+              "Tablet",
+              "Mobile"
+            ],
+            "value": "Desktop"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "prv-frame",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Preview",
+            "content": "Preview not available in SDUI mode"
+          },
+          "classes": "w-full h-full bg-base-100 border border-base-300 rounded-lg overflow-hidden",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "json-editor-page",
+      "title": "JSON Editor",
+      "description": null,
+      "route": "/json-editor",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "je-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "data_object",
+            "title": "JSON Editor",
+            "subtitle": "Edit the schema directly"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "je-actions",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {},
+          "classes": "flex flex-row items-center gap-3 p-3",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "je-format",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "auto_fix_high",
+            "variant": "tonal",
+            "label": "Format"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "je-validate",
+          "component": "button",
+          "grid_position": {
+            "column": 3,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Validate",
+            "variant": "tonal",
+            "icon": "verified"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "je-apply",
+          "component": "button",
+          "grid_position": {
+            "column": 5,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "check",
+            "variant": "filled",
+            "color": "primary",
+            "label": "Apply"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "je-editor",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "data": "{}"
+          },
+          "classes": "w-full h-full rounded-lg border border-base-300 overflow-hidden",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "sync-panel-page",
+      "title": "Sync Status",
+      "description": null,
+      "route": "/sync-panel",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "sp-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "cloud",
+            "subtitle": "Overview of MongoDB ↔ local mirror",
+            "title": "Sync Status"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sp-stat-last",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "bindField": "last_sync_at",
+            "label": "Last sync"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sp-stat-pending",
+          "component": "div",
+          "grid_position": {
+            "column": 4,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Pending changes",
+            "bindField": "pending_count"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sp-stat-conflicts",
+          "component": "div",
+          "grid_position": {
+            "column": 7,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "bindField": "conflict_count",
+            "label": "Conflicts"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sp-stat-status",
+          "component": "div",
+          "grid_position": {
+            "column": 10,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Connection",
+            "bindField": "status"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sp-progress",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "bindField": "progress"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sp-table",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "columns": [
+              {
+                "key": "entity",
+                "label": "Entity"
+              },
+              {
+                "key": "op",
+                "label": "Op"
+              },
+              {
+                "key": "status",
+                "label": "Status"
+              },
+              {
+                "key": "at",
+                "label": "When"
+              }
+            ],
+            "bindStore": "sync-store"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "sync-floating-page",
+      "title": "Floating Sync",
+      "description": null,
+      "route": "/sync-floating",
+      "layout": "default",
+      "elements": [],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "sync-modal-page",
+      "title": "Sync Configuration",
+      "description": null,
+      "route": "/sync-modal",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "sm-dialog",
+          "component": "modal",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "open": true,
+            "dismissible": true,
+            "title": "Sync Configuration"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sm-uri",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "bind": {
+              "store": "sync-store",
+              "field": "mongo_uri"
+            },
+            "label": "MongoDB URI",
+            "placeholder": "mongodb://localhost:27017"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sm-interval",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "bind": {
+              "store": "sync-store",
+              "field": "interval_seconds"
+            },
+            "type": "number",
+            "label": "Sync interval (seconds)"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sm-direction",
+          "component": "select",
+          "grid_position": {
+            "column": 7,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Direction",
+            "options": [
+              "two-way",
+              "push",
+              "pull"
+            ],
+            "bind": {
+              "store": "sync-store",
+              "field": "direction"
+            }
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sm-autosync",
+          "component": "switch",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Auto-sync on save",
+            "bind": {
+              "store": "sync-store",
+              "field": "auto_sync"
+            }
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sm-cancel",
+          "component": "button",
+          "grid_position": {
+            "column": 9,
+            "row": 13,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "tonal",
+            "label": "Cancel"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sm-save",
+          "component": "button",
+          "grid_position": {
+            "column": 11,
+            "row": 13,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Save",
+            "variant": "filled",
+            "color": "primary"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "self-gen-page",
+      "title": "Self Generation",
+      "description": null,
+      "route": "/self-gen",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "sg-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "subtitle": "Generate schemas from a natural-language prompt",
+            "title": "Self Generation",
+            "icon": "auto_awesome"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sg-prompt",
+          "component": "textarea",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Prompt",
+            "rows": 6,
+            "placeholder": "Describe the schema you want to generate..."
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sg-generate",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "color": "primary",
+            "label": "Generate",
+            "icon": "auto_awesome",
+            "variant": "filled"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sg-result",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "schema",
+            "title": "Generated Schema"
+          },
+          "classes": "p-6",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "project-manager-page",
+      "title": "Projects",
+      "description": null,
+      "route": "/project-manager",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "pm-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "subtitle": "Tauri project CRUD",
+            "title": "Projects",
+            "icon": "account_tree"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "pm-new",
+          "component": "button",
+          "grid_position": {
+            "column": 11,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "color": "primary",
+            "label": "New project",
+            "icon": "add",
+            "variant": "filled"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "pm-stats-total",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Projects",
+            "bindField": "total"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "pm-stats-active",
+          "component": "div",
+          "grid_position": {
+            "column": 4,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Active",
+            "bindField": "active"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "pm-stats-pages",
+          "component": "div",
+          "grid_position": {
+            "column": 7,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Pages",
+            "bindField": "total_pages"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "pm-stats-sync",
+          "component": "div",
+          "grid_position": {
+            "column": 10,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Synced",
+            "bindField": "synced"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "pm-table",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "bindStore": "projects-store",
+            "columns": [
+              {
+                "key": "name",
+                "label": "Project"
+              },
+              {
+                "key": "pages",
+                "label": "Pages"
+              },
+              {
+                "key": "updated",
+                "label": "Updated"
+              },
+              {
+                "key": "sync",
+                "label": "Sync"
+              }
+            ]
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "module-manager-page",
+      "title": "Modules",
+      "description": null,
+      "route": "/module-manager",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "mm-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Module Manager",
+            "icon": "extension",
+            "subtitle": "Enable / disable modules per project"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "mm-empty",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "extension_off",
+            "title": "No modules installed",
+            "description": "Add a module to extend Designer"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "mm-table",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "columns": [
+              {
+                "key": "name",
+                "label": "Module"
+              },
+              {
+                "key": "version",
+                "label": "Version"
+              },
+              {
+                "key": "enabled",
+                "label": "Enabled"
+              },
+              {
+                "key": "actions",
+                "label": ""
+              }
+            ],
+            "bindStore": "module-store"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "db-settings-page",
+      "title": "DB Settings",
+      "description": null,
+      "route": "/db-settings",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "db-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "subtitle": "MongoDB URI, sync interval, collections",
+            "title": "Database Settings",
+            "icon": "storage"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "db-card-connection",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Connection",
+            "icon": "cable"
+          },
+          "classes": "p-6 flex flex-col gap-4",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "db-uri",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "bind": {
+              "store": "settings-store",
+              "field": "mongo_uri"
+            },
+            "label": "Mongo URI"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "db-dbname",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "bind": {
+              "store": "settings-store",
+              "field": "db_name"
+            },
+            "label": "Database name"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "db-test",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Test connection",
+            "variant": "tonal",
+            "icon": "network_check"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "db-card-sync",
+          "component": "card",
+          "grid_position": {
+            "column": 7,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Sync",
+            "icon": "sync_alt"
+          },
+          "classes": "p-6 flex flex-col gap-4",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "db-interval",
+          "component": "input",
+          "grid_position": {
+            "column": 7,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "type": "number",
+            "label": "Interval (seconds)",
+            "bind": {
+              "store": "settings-store",
+              "field": "interval"
+            }
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "db-direction",
+          "component": "select",
+          "grid_position": {
+            "column": 7,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Direction",
+            "options": [
+              "two-way",
+              "push",
+              "pull"
+            ],
+            "bind": {
+              "store": "settings-store",
+              "field": "direction"
+            }
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "db-autosync",
+          "component": "switch",
+          "grid_position": {
+            "column": 7,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Auto-sync on save",
+            "bind": {
+              "store": "settings-store",
+              "field": "auto_sync"
+            }
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "db-collection-list",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 7,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "columns": [
+              {
+                "key": "name",
+                "label": "Collection"
+              },
+              {
+                "key": "schema",
+                "label": "Schema"
+              },
+              {
+                "key": "sync",
+                "label": "Sync"
+              }
+            ],
+            "bindStore": "settings-store.collections"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "not-found",
+      "title": "Not Found",
+      "description": null,
+      "route": "/404",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "not-found-empty-state",
+          "component": "div",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "message": "The page you're looking for doesn't exist.",
+            "title": "Page Not Found"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "go-home-button",
+          "component": "button",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Go Home",
+            "variant": "primary"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "schema-error",
+      "title": "Schema Error",
+      "description": null,
+      "route": "/schema-error",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "schema-error-empty-state",
+          "component": "div",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Schema Not Found",
+            "message": "The schema could not be loaded."
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "reload-button",
+          "component": "button",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "primary",
+            "label": "Reload"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    }
+  ],
+  "shortcuts": [],
+  "modals": []
+}

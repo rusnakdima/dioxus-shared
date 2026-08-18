@@ -1,0 +1,2320 @@
+{
+  "app_id": "lumencast",
+  "version": "1.0.0",
+  "pages": [
+    {
+      "id": "home",
+      "title": "Home",
+      "description": null,
+      "route": "/",
+      "layout": "with-both",
+      "elements": [
+        {
+          "id": "app-header-region",
+          "component": "header",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {},
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "app-sidebar-left-region",
+          "component": "div",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "collapseOnMobile": true
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "app-sidebar-right-region",
+          "component": "div",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {},
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-page",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "subtitle": "Application preferences",
+            "title": "Settings"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-general",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "glass": true,
+            "title": "General"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-theme",
+          "component": "select",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Theme",
+            "options": [
+              "System",
+              "Dark",
+              "Light"
+            ]
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-autostart",
+          "component": "switch",
+          "grid_position": {
+            "column": 4,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Start on login"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-minimize",
+          "component": "switch",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Minimize to tray"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-hotkeys",
+          "component": "card",
+          "grid_position": {
+            "column": 7,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Hotkeys",
+            "glass": true,
+            "dataSource": "settings.hotkeys"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-advanced",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Advanced",
+            "glass": true
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-debug",
+          "component": "checkbox",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Enable verbose logging"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-reset",
+          "component": "button",
+          "grid_position": {
+            "column": 7,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Reset to defaults",
+            "variant": "ghost"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-both",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "studio",
+      "title": "Studio",
+      "description": null,
+      "route": "/studio",
+      "layout": "studio",
+      "elements": [
+        {
+          "id": "studio-page",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Studio",
+            "subtitle": "Live preview and audio monitoring"
+          },
+          "classes": "flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "studio-gpu-preview",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "GPU Composite Preview",
+            "glass": true
+          },
+          "classes": "overflow-hidden",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "gpu-canvas-stage",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "overlay": true
+          },
+          "classes": "aspect-video w-full bg-black/40 rounded-lg overflow-hidden relative",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "gpu-preview-footer",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "ghost",
+            "label": "1920x1080 · 60fps"
+          },
+          "classes": "absolute bottom-2 right-2 px-2 py-1 text-xs",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "studio-audio-meters",
+          "component": "card",
+          "grid_position": {
+            "column": 9,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Master Output",
+            "mode": "vu-peak",
+            "channels": [
+              "L",
+              "R"
+            ],
+            "stereo": true
+          },
+          "classes": "h-full",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "studio-gpu-stats",
+          "component": "div",
+          "grid_position": {
+            "column": 9,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "value": "0",
+            "label": "GPU",
+            "unit": "%",
+            "icon": "gpu"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "studio-fps",
+          "component": "div",
+          "grid_position": {
+            "column": 11,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "activity",
+            "value": "0",
+            "label": "FPS",
+            "unit": ""
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "studio-waveform",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "channels": 2,
+            "label": "Waveform",
+            "showGrid": true
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "studio-transport",
+          "component": "card",
+          "grid_position": {
+            "column": 9,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "glass": true
+          },
+          "classes": "flex items-center gap-3 justify-end",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "transport-btn-stream",
+          "component": "button",
+          "grid_position": {
+            "column": 11,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "error",
+            "size": "lg",
+            "label": "Go Live",
+            "icon": "broadcast"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "transport-btn-record",
+          "component": "button",
+          "grid_position": {
+            "column": 12,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Record",
+            "size": "lg",
+            "icon": "record",
+            "variant": "primary"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "studio",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "audio-mixer",
+      "title": "Audio Mixer",
+      "description": null,
+      "route": "/audio-mixer",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "mixer-page",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "subtitle": "Channel strips, EQ and sends",
+            "title": "Audio Mixer"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "mixer-strips-row",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Channels",
+            "glass": true,
+            "dataSource": "audio.channels",
+            "layout": "horizontal-strip"
+          },
+          "classes": "overflow-x-auto",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "mixer-master-fader",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Master",
+            "min": -60,
+            "max": 12,
+            "unit": "dB",
+            "orientation": "vertical"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "mixer-headroom",
+          "component": "div",
+          "grid_position": {
+            "column": 7,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "max": 6,
+            "unit": "dB",
+            "value": 0,
+            "label": "Headroom",
+            "color": "success"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "scenes",
+      "title": "Scenes",
+      "description": null,
+      "route": "/scenes",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "scenes-page",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "subtitle": "Switch layouts with a single click",
+            "title": "Scenes"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "scenes-grid-container",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "itemComponent": "app-scene-card",
+            "glass": true,
+            "dataSource": "scenes",
+            "emptyState": "no-scenes",
+            "title": "All scenes"
+          },
+          "classes": "grid grid-cols-4 gap-4",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "scenes-active-badge",
+          "component": "badge",
+          "grid_position": {
+            "column": 1,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Active: —",
+            "size": "lg",
+            "variant": "primary"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "scenes-add-btn",
+          "component": "button",
+          "grid_position": {
+            "column": 7,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "New Scene",
+            "variant": "primary",
+            "icon": "plus"
+          },
+          "classes": "justify-self-end",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "sources",
+      "title": "Sources",
+      "description": null,
+      "route": "/sources",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "sources-page",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Sources",
+            "subtitle": "Inputs feeding the active scene"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sources-tabs",
+          "component": "tabs",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "activeTab": "mic",
+            "tabs": [
+              {
+                "id": "mic",
+                "label": "Microphones"
+              },
+              {
+                "id": "camera",
+                "label": "Cameras"
+              },
+              {
+                "id": "screen",
+                "label": "Screen Capture"
+              },
+              {
+                "id": "media",
+                "label": "Media Files"
+              }
+            ]
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sources-tiles",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "dataSource": "sources.activeTab",
+            "itemComponent": "app-source-tile",
+            "title": "Available inputs",
+            "glass": true
+          },
+          "classes": "grid grid-cols-3 gap-4",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sources-add-btn",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 7,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "primary",
+            "label": "Add Source",
+            "icon": "plus"
+          },
+          "classes": "justify-self-end",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "gpu-monitor",
+      "title": "GPU Monitor",
+      "description": null,
+      "route": "/gpu-monitor",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "gpu-page",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "GPU Monitor",
+            "subtitle": "Compositor and encoder health"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "gpu-usage-stat",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "unit": "%",
+            "icon": "gpu",
+            "label": "GPU Usage"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "gpu-fps-stat",
+          "component": "div",
+          "grid_position": {
+            "column": 4,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Render FPS",
+            "icon": "activity"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "gpu-vram-stat",
+          "component": "div",
+          "grid_position": {
+            "column": 7,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "memory",
+            "label": "VRAM",
+            "unit": "MB"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "gpu-temp-stat",
+          "component": "div",
+          "grid_position": {
+            "column": 10,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "thermometer",
+            "label": "Temp",
+            "unit": "°C"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "gpu-usage-chart",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Frame Time",
+            "glass": true,
+            "chart": "line",
+            "dataSource": "gpu.frame_times"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "gpu-encoder-stat",
+          "component": "div",
+          "grid_position": {
+            "column": 9,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Encoder",
+            "icon": "cpu"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "stream",
+      "title": "Stream",
+      "description": null,
+      "route": "/stream",
+      "layout": "with-both",
+      "elements": [
+        {
+          "id": "stream-page",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "subtitle": "Push live to your audience",
+            "title": "Stream"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stream-platform",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "value": "Twitch",
+            "label": "Platform",
+            "options": [
+              "Twitch",
+              "YouTube",
+              "Kick",
+              "Custom RTMP"
+            ]
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stream-server",
+          "component": "select",
+          "grid_position": {
+            "column": 5,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Server",
+            "optionsSource": "stream.servers"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stream-key",
+          "component": "input",
+          "grid_position": {
+            "column": 9,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Stream Key",
+            "type": "password",
+            "placeholder": "Paste your stream key"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stream-bitrate",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "unit": "kbps",
+            "step": 500,
+            "min": 1000,
+            "max": 20000,
+            "label": "Bitrate"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stream-auto",
+          "component": "switch",
+          "grid_position": {
+            "column": 7,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Auto-start with scene change"
+          },
+          "classes": "self-end",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stream-go-live",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "size": "lg",
+            "label": "Go Live",
+            "variant": "error",
+            "icon": "broadcast"
+          },
+          "classes": "justify-self-end",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-both",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "overlay",
+      "title": "Overlay",
+      "description": null,
+      "route": "/overlay",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "overlay-page",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Overlay",
+            "subtitle": "Text, alerts and donations over your stream"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-tabs",
+          "component": "tabs",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "activeTab": "text",
+            "tabs": [
+              {
+                "id": "text",
+                "label": "Text"
+              },
+              {
+                "id": "alerts",
+                "label": "Alerts"
+              },
+              {
+                "id": "donations",
+                "label": "Donations"
+              }
+            ]
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-editor",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "glass": true,
+            "title": "Editor",
+            "dataSource": "overlay.layers"
+          },
+          "classes": "min-h-[320px]",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-settings",
+          "component": "card",
+          "grid_position": {
+            "column": 9,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Layer",
+            "dataSource": "overlay.active_layer",
+            "glass": true
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "recordings",
+      "title": "Recordings",
+      "description": null,
+      "route": "/recordings",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "recordings-page",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "subtitle": "All locally stored sessions",
+            "title": "Recordings"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "recordings-table",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "columns": [
+              {
+                "key": "name",
+                "label": "Name",
+                "sortable": true
+              },
+              {
+                "key": "started_at",
+                "label": "Started",
+                "type": "datetime"
+              },
+              {
+                "key": "duration",
+                "label": "Duration"
+              },
+              {
+                "key": "size",
+                "label": "Size"
+              },
+              {
+                "key": "platform",
+                "label": "Platform"
+              },
+              {
+                "key": "actions",
+                "label": "",
+                "type": "actions"
+              }
+            ],
+            "glass": true,
+            "dataSource": "recordings.items",
+            "title": "Sessions"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "recordings-empty",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "description": "Press Record in the Studio to capture your first session.",
+            "title": "No recordings yet",
+            "icon": "film"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "profiles",
+      "title": "Profiles",
+      "description": null,
+      "route": "/profiles",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "profiles-page",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "subtitle": "Saved scene & audio configurations",
+            "title": "Profiles"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "profiles-table",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "glass": true,
+            "dataSource": "profiles.items",
+            "title": "Saved profiles",
+            "columns": [
+              {
+                "key": "name",
+                "label": "Name",
+                "sortable": true
+              },
+              {
+                "key": "scene_count",
+                "label": "Scenes"
+              },
+              {
+                "key": "updated_at",
+                "label": "Updated",
+                "type": "datetime"
+              },
+              {
+                "key": "actions",
+                "label": "",
+                "type": "actions"
+              }
+            ]
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "presets",
+      "title": "Presets",
+      "description": null,
+      "route": "/presets",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "presets-page",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Presets",
+            "subtitle": "Audio FX chains and GPU shaders"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "presets-tabs",
+          "component": "tabs",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "activeTab": "audio",
+            "tabs": [
+              {
+                "id": "audio",
+                "label": "Audio FX"
+              },
+              {
+                "id": "shaders",
+                "label": "GPU Shaders"
+              }
+            ]
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "presets-grid-container",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "itemComponent": "app-card",
+            "dataSource": "presets.activeTab",
+            "title": "Available presets",
+            "glass": true
+          },
+          "classes": "grid grid-cols-3 gap-4",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "assets",
+      "title": "Assets",
+      "description": null,
+      "route": "/assets",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "assets-page",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "subtitle": "Audio, video and image library",
+            "title": "Assets"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "assets-tabs",
+          "component": "tabs",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "tabs": [
+              {
+                "id": "audio",
+                "label": "Audio"
+              },
+              {
+                "id": "video",
+                "label": "Video"
+              },
+              {
+                "id": "images",
+                "label": "Images"
+              }
+            ],
+            "activeTab": "audio"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "assets-grid-container",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "itemComponent": "app-source-tile",
+            "glass": true,
+            "dataSource": "assets.activeTab",
+            "title": "Library"
+          },
+          "classes": "grid grid-cols-4 gap-4",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "assets-import-btn",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 7,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "primary",
+            "icon": "upload",
+            "label": "Import"
+          },
+          "classes": "justify-self-end",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "settings",
+      "title": "Settings",
+      "description": null,
+      "route": "/settings",
+      "layout": "with-both",
+      "elements": [
+        {
+          "id": "settings-page",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Settings",
+            "subtitle": "Application preferences"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-general",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "glass": true,
+            "title": "General"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-theme",
+          "component": "select",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "options": [
+              "System",
+              "Dark",
+              "Light"
+            ],
+            "label": "Theme"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-autostart",
+          "component": "switch",
+          "grid_position": {
+            "column": 4,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Start on login"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-minimize",
+          "component": "switch",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Minimize to tray"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-hotkeys",
+          "component": "card",
+          "grid_position": {
+            "column": 7,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "dataSource": "settings.hotkeys",
+            "title": "Hotkeys",
+            "glass": true
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-advanced",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "glass": true,
+            "title": "Advanced"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-debug",
+          "component": "checkbox",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Enable verbose logging"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-reset",
+          "component": "button",
+          "grid_position": {
+            "column": 7,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Reset to defaults",
+            "variant": "ghost"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-both",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "storage",
+      "title": "Storage",
+      "description": null,
+      "route": "/storage",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "storage-page",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Storage",
+            "subtitle": "Disk usage for recordings and assets"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "storage-total-stat",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "unit": "GB",
+            "label": "Used",
+            "icon": "database"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "storage-recordings-stat",
+          "component": "div",
+          "grid_position": {
+            "column": 5,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "unit": "GB",
+            "icon": "film",
+            "label": "Recordings"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "storage-assets-stat",
+          "component": "div",
+          "grid_position": {
+            "column": 9,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "folder",
+            "label": "Assets",
+            "unit": "GB"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "storage-bar",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Disk usage",
+            "unit": "%",
+            "max": 100,
+            "color": "primary",
+            "value": 0
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "storage-cleanup",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Clean old recordings",
+            "icon": "trash",
+            "variant": "ghost"
+          },
+          "classes": "justify-self-end",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "not-found-page",
+      "title": "Not Found",
+      "description": null,
+      "route": "/404",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "not-found-empty-state",
+          "component": "div",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Page Not Found",
+            "message": "The page you're looking for doesn't exist."
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "go-home-button",
+          "component": "button",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "primary",
+            "label": "Go Home"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "schema-error-page",
+      "title": "Schema Error",
+      "description": null,
+      "route": "/schema-error",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "schema-error-empty-state",
+          "component": "div",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Schema Not Found",
+            "message": "The schema could not be loaded."
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "reload-button",
+          "component": "button",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Reload",
+            "variant": "primary"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    }
+  ],
+  "shortcuts": [],
+  "modals": []
+}

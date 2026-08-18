@@ -1,0 +1,4381 @@
+{
+  "app_id": "taskflow",
+  "version": "1.0.0",
+  "pages": [
+    {
+      "id": "home",
+      "title": "Home",
+      "description": null,
+      "route": "/",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "app-header-region",
+          "component": "header",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "showUserMenu": true,
+            "logo": "TaskFlow",
+            "showSearch": true
+          },
+          "classes": "flex items-center justify-between gap-4 px-6 py-3 bg-base-100 border-b border-base-300",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "app-sidebar-region",
+          "component": "sidebar",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "items": [
+              {
+                "id": "nav-dashboard",
+                "label": "Dashboard",
+                "icon": "dashboard",
+                "link": "/dashboard"
+              },
+              {
+                "id": "nav-stats",
+                "label": "Stats",
+                "icon": "bar_chart",
+                "link": "/stats"
+              },
+              {
+                "id": "nav-calendar",
+                "label": "Calendar",
+                "icon": "calendar_month",
+                "link": "/calendar"
+              },
+              {
+                "id": "nav-todos",
+                "label": "Projects",
+                "icon": "folder",
+                "link": "/todos"
+              },
+              {
+                "id": "nav-chat",
+                "label": "Chat",
+                "icon": "chat",
+                "link": "/chat"
+              },
+              {
+                "id": "nav-profile",
+                "label": "Profile",
+                "icon": "person",
+                "link": "/profile"
+              },
+              {
+                "id": "nav-settings",
+                "label": "Settings",
+                "icon": "settings",
+                "link": "/settings"
+              },
+              {
+                "id": "nav-archive",
+                "label": "Archive",
+                "icon": "archive",
+                "link": "/archive"
+              },
+              {
+                "id": "nav-categories",
+                "label": "Categories",
+                "icon": "category",
+                "link": "/categories"
+              },
+              {
+                "id": "nav-sync",
+                "label": "Sync",
+                "icon": "sync",
+                "link": "/sync"
+              },
+              {
+                "id": "nav-data-management",
+                "label": "Data Management",
+                "icon": "storage",
+                "link": "/data-management"
+              },
+              {
+                "id": "nav-about",
+                "label": "About",
+                "icon": "info",
+                "link": "/about"
+              }
+            ],
+            "collapsible": true,
+            "title": "TaskFlow"
+          },
+          "classes": "flex flex-col gap-2 p-4 bg-base-200 min-h-screen w-64 border-r border-base-300",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "dashboard-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "showBack": false,
+            "title": "TaskFlow"
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "welcome-section",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Welcome back!",
+            "subtitle": "Here's what's happening with your tasks today."
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stats-total",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Total Tasks",
+            "iconBgClass": "bg-indigo-500",
+            "variant": "indigo",
+            "icon": "assignment"
+          },
+          "classes": "col-span-3 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stats-completed",
+          "component": "div",
+          "grid_position": {
+            "column": 3,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "iconBgClass": "bg-green-500",
+            "variant": "green",
+            "label": "Completed",
+            "icon": "task_alt"
+          },
+          "classes": "col-span-3 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stats-in-progress",
+          "component": "div",
+          "grid_position": {
+            "column": 6,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "pending",
+            "iconBgClass": "bg-blue-500",
+            "variant": "blue",
+            "label": "In Progress"
+          },
+          "classes": "col-span-3 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stats-overdue",
+          "component": "div",
+          "grid_position": {
+            "column": 9,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "warning",
+            "iconBgClass": "bg-red-500",
+            "variant": "red",
+            "label": "Overdue"
+          },
+          "classes": "col-span-3 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "progress-section",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Task Progress"
+          },
+          "classes": "col-span-6 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "all-tasks-section",
+          "component": "card",
+          "grid_position": {
+            "column": 6,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "All Tasks"
+          },
+          "classes": "col-span-6 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "new-project-btn",
+          "component": "button",
+          "grid_position": {
+            "column": 11,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "accent",
+            "label": "New Project",
+            "icon": "add"
+          },
+          "classes": "col-span-1 row-span-1 justify-self-end",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "login-page",
+      "title": "Login",
+      "description": null,
+      "route": "/login",
+      "layout": "auth",
+      "elements": [
+        {
+          "id": "login-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "TaskFlow",
+            "showBack": false
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "login-form",
+          "component": "card",
+          "grid_position": {
+            "column": 3,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "subtitle": "Welcome back",
+            "title": "Sign In"
+          },
+          "classes": "col-span-6 row-span-3 mx-auto",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "login-email",
+          "component": "input",
+          "grid_position": {
+            "column": 3,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "type": "email",
+            "label": "Email",
+            "placeholder": "Enter your email"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "login-password",
+          "component": "input",
+          "grid_position": {
+            "column": 3,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "type": "password",
+            "placeholder": "Enter your password",
+            "label": "Password"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "login-submit",
+          "component": "button",
+          "grid_position": {
+            "column": 3,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "accent",
+            "fullWidth": true,
+            "label": "Sign In"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "auth",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "signup-page",
+      "title": "Sign Up",
+      "description": null,
+      "route": "/signup",
+      "layout": "auth",
+      "elements": [
+        {
+          "id": "signup-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "TaskFlow",
+            "showBack": false
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "signup-form",
+          "component": "card",
+          "grid_position": {
+            "column": 3,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Create Account",
+            "subtitle": "Join TaskFlow"
+          },
+          "classes": "col-span-6 row-span-4 mx-auto",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "signup-name",
+          "component": "input",
+          "grid_position": {
+            "column": 3,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Full Name",
+            "placeholder": "Enter your name",
+            "type": "text"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "signup-email",
+          "component": "input",
+          "grid_position": {
+            "column": 3,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "placeholder": "Enter your email",
+            "label": "Email",
+            "type": "email"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "signup-password",
+          "component": "input",
+          "grid_position": {
+            "column": 3,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Password",
+            "type": "password",
+            "placeholder": "Create a password"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "signup-submit",
+          "component": "button",
+          "grid_position": {
+            "column": 3,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Sign Up",
+            "fullWidth": true,
+            "variant": "accent"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "auth",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "reset-password-page",
+      "title": "Reset Password",
+      "description": null,
+      "route": "/reset-password",
+      "layout": "auth",
+      "elements": [
+        {
+          "id": "reset-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "TaskFlow",
+            "showBack": false
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "reset-form",
+          "component": "card",
+          "grid_position": {
+            "column": 3,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Reset Password",
+            "subtitle": "We'll send you a reset code"
+          },
+          "classes": "col-span-6 row-span-3 mx-auto",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "reset-email",
+          "component": "input",
+          "grid_position": {
+            "column": 3,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "type": "email",
+            "label": "Email",
+            "placeholder": "Enter your email"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "reset-code",
+          "component": "input",
+          "grid_position": {
+            "column": 3,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "placeholder": "Enter reset code",
+            "label": "Reset Code",
+            "type": "text"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "reset-submit",
+          "component": "button",
+          "grid_position": {
+            "column": 3,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Reset Password",
+            "fullWidth": true,
+            "variant": "accent"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "auth",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "change-password-page",
+      "title": "Change Password",
+      "description": null,
+      "route": "/change-password",
+      "layout": "auth",
+      "elements": [
+        {
+          "id": "change-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "showBack": false,
+            "title": "TaskFlow"
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "change-form",
+          "component": "card",
+          "grid_position": {
+            "column": 3,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Change Password"
+          },
+          "classes": "col-span-6 row-span-3 mx-auto",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "change-current",
+          "component": "input",
+          "grid_position": {
+            "column": 3,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Current Password",
+            "type": "password"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "change-new",
+          "component": "input",
+          "grid_position": {
+            "column": 3,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "type": "password",
+            "label": "New Password"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "change-submit",
+          "component": "button",
+          "grid_position": {
+            "column": 3,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "accent",
+            "label": "Change Password",
+            "fullWidth": true
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "auth",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "qr-login-page",
+      "title": "QR Login",
+      "description": null,
+      "route": "/login/qr",
+      "layout": "auth",
+      "elements": [
+        {
+          "id": "qr-login-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "TaskFlow",
+            "showBack": false
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "qr-display",
+          "component": "card",
+          "grid_position": {
+            "column": 4,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Scan QR Code"
+          },
+          "classes": "col-span-4 row-span-2 mx-auto",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "qr-instructions",
+          "component": "card",
+          "grid_position": {
+            "column": 4,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Instructions",
+            "message": "Open TaskFlow app and scan the QR code to sign in"
+          },
+          "classes": "col-span-4 row-span-1 mx-auto",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "auth",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "dashboard-page",
+      "title": "Dashboard",
+      "description": null,
+      "route": "/dashboard",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "dashboard-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "showBack": false,
+            "title": "TaskFlow"
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "welcome-section",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Welcome back!",
+            "subtitle": "Here's what's happening with your tasks today."
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stats-total",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "assignment",
+            "iconBgClass": "bg-indigo-500",
+            "variant": "indigo",
+            "label": "Total Tasks"
+          },
+          "classes": "col-span-3 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stats-completed",
+          "component": "div",
+          "grid_position": {
+            "column": 3,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "task_alt",
+            "variant": "green",
+            "label": "Completed",
+            "iconBgClass": "bg-green-500"
+          },
+          "classes": "col-span-3 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stats-in-progress",
+          "component": "div",
+          "grid_position": {
+            "column": 6,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "iconBgClass": "bg-blue-500",
+            "icon": "pending",
+            "label": "In Progress",
+            "variant": "blue"
+          },
+          "classes": "col-span-3 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stats-overdue",
+          "component": "div",
+          "grid_position": {
+            "column": 9,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "warning",
+            "iconBgClass": "bg-red-500",
+            "variant": "red",
+            "label": "Overdue"
+          },
+          "classes": "col-span-3 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "progress-section",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Task Progress"
+          },
+          "classes": "col-span-6 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "all-tasks-section",
+          "component": "card",
+          "grid_position": {
+            "column": 6,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "All Tasks"
+          },
+          "classes": "col-span-6 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "new-project-btn",
+          "component": "button",
+          "grid_position": {
+            "column": 11,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "accent",
+            "icon": "add",
+            "label": "New Project"
+          },
+          "classes": "col-span-1 row-span-1 justify-self-end",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "stats-page",
+      "title": "Statistics",
+      "description": null,
+      "route": "/stats",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "stats-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Statistics",
+            "showBack": false
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "time-range-selector",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "options": [
+              {
+                "id": "day",
+                "label": "This Day",
+                "icon": "today"
+              },
+              {
+                "id": "week",
+                "label": "This Week",
+                "icon": "date_range"
+              },
+              {
+                "id": "month",
+                "label": "This Month",
+                "icon": "calendar_month"
+              },
+              {
+                "id": "quarter",
+                "label": "This Quarter",
+                "icon": "calendar_view_month"
+              },
+              {
+                "id": "year",
+                "label": "This Year",
+                "icon": "calendar_today"
+              }
+            ],
+            "active": "week"
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stats-total-tasks",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "assignment",
+            "label": "Total Tasks"
+          },
+          "classes": "col-span-3 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stats-completion-rate",
+          "component": "div",
+          "grid_position": {
+            "column": 3,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "trending_up",
+            "label": "Completion Rate"
+          },
+          "classes": "col-span-3 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stats-avg-time",
+          "component": "div",
+          "grid_position": {
+            "column": 6,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Average Time",
+            "icon": "schedule"
+          },
+          "classes": "col-span-3 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stats-productivity",
+          "component": "div",
+          "grid_position": {
+            "column": 9,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Productivity Score",
+            "icon": "star"
+          },
+          "classes": "col-span-3 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "completion-trend",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Completion Trend"
+          },
+          "classes": "col-span-8 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "achievements",
+          "component": "card",
+          "grid_position": {
+            "column": 8,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Achievements"
+          },
+          "classes": "col-span-4 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "calendar-page",
+      "title": "Calendar",
+      "description": null,
+      "route": "/calendar",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "calendar-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "showBack": false,
+            "title": "Calendar"
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "calendar-view-toggle",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "options": [
+              {
+                "id": "month",
+                "label": "Month"
+              },
+              {
+                "id": "week",
+                "label": "Week"
+              }
+            ],
+            "active": "month"
+          },
+          "classes": "col-span-4 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "calendar-grid",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Calendar Grid"
+          },
+          "classes": "col-span-8 row-span-4",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "date-panel",
+          "component": "card",
+          "grid_position": {
+            "column": 8,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Selected Date"
+          },
+          "classes": "col-span-4 row-span-4",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "chat-page",
+      "title": "Chat",
+      "description": null,
+      "route": "/chat",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "chat-sidebar",
+          "component": "sidebar",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "collapsible": true,
+            "title": "Conversations"
+          },
+          "classes": "col-span-3 row-span-6",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "chat-messages",
+          "component": "card",
+          "grid_position": {
+            "column": 3,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Messages"
+          },
+          "classes": "col-span-6 row-span-5",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "chat-input",
+          "component": "input",
+          "grid_position": {
+            "column": 3,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "type": "textarea",
+            "placeholder": "Type a message..."
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "chat-details",
+          "component": "card",
+          "grid_position": {
+            "column": 9,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Details"
+          },
+          "classes": "col-span-3 row-span-6",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "todos-page",
+      "title": "Projects",
+      "description": null,
+      "route": "/todos",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "todos-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "showBack": false,
+            "title": "Projects"
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "visibility-selector",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "active": "all",
+            "options": [
+              {
+                "id": "all",
+                "label": "All"
+              },
+              {
+                "id": "private",
+                "label": "Private"
+              },
+              {
+                "id": "shared",
+                "label": "Shared"
+              },
+              {
+                "id": "public",
+                "label": "Public"
+              }
+            ]
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "todos-stats-total",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "assignment",
+            "label": "Total Projects"
+          },
+          "classes": "col-span-3 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "todos-stats-active",
+          "component": "div",
+          "grid_position": {
+            "column": 3,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Active",
+            "icon": "play_circle"
+          },
+          "classes": "col-span-3 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "todos-stats-completed",
+          "component": "div",
+          "grid_position": {
+            "column": 6,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Completed",
+            "icon": "check_circle"
+          },
+          "classes": "col-span-3 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "todos-stats-week",
+          "component": "div",
+          "grid_position": {
+            "column": 9,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "This Week",
+            "icon": "calendar_today"
+          },
+          "classes": "col-span-3 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "todos-list",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "viewModes": [
+              "table",
+              "grid",
+              "kanban"
+            ],
+            "title": "Projects List"
+          },
+          "classes": "col-span-12 row-span-4",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "new-todo-btn",
+          "component": "button",
+          "grid_position": {
+            "column": 11,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "accent",
+            "label": "New Project",
+            "icon": "add"
+          },
+          "classes": "col-span-1 row-span-1 justify-self-end",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "tasks-page",
+      "title": "Tasks",
+      "description": null,
+      "route": "/todos/:todoId/tasks",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "tasks-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Tasks",
+            "showBack": true
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "todo-info",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Project Info"
+          },
+          "classes": "col-span-4 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "kanban-pending",
+          "component": "card",
+          "grid_position": {
+            "column": 4,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "blue",
+            "title": "Pending"
+          },
+          "classes": "col-span-2 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "kanban-in-progress",
+          "component": "card",
+          "grid_position": {
+            "column": 6,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "In Progress",
+            "variant": "orange"
+          },
+          "classes": "col-span-2 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "kanban-completed",
+          "component": "card",
+          "grid_position": {
+            "column": 8,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Completed",
+            "variant": "green"
+          },
+          "classes": "col-span-2 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "kanban-skipped",
+          "component": "card",
+          "grid_position": {
+            "column": 10,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "gray",
+            "title": "Skipped"
+          },
+          "classes": "col-span-2 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "tasks-list",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "viewModes": [
+              "table",
+              "grid",
+              "kanban"
+            ],
+            "title": "All Tasks"
+          },
+          "classes": "col-span-12 row-span-4",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "new-task-btn",
+          "component": "button",
+          "grid_position": {
+            "column": 11,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "New Task",
+            "icon": "add",
+            "variant": "accent"
+          },
+          "classes": "col-span-1 row-span-1 justify-self-end",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "subtasks-page",
+      "title": "Subtasks",
+      "description": null,
+      "route": "/todos/:todoId/tasks/:taskId/subtasks",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "subtasks-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "showBack": true,
+            "title": "Subtasks"
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "subtasks-list",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Subtasks",
+            "viewModes": [
+              "table",
+              "grid",
+              "kanban"
+            ]
+          },
+          "classes": "col-span-12 row-span-4",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "new-subtask-btn",
+          "component": "button",
+          "grid_position": {
+            "column": 11,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "accent",
+            "icon": "add",
+            "label": "New Subtask"
+          },
+          "classes": "col-span-1 row-span-1 justify-self-end",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "profile-page",
+      "title": "Profile",
+      "description": null,
+      "route": "/profile",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "profile-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "showBack": false,
+            "title": "Profile"
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "profile-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Profile Info"
+          },
+          "classes": "col-span-4 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "profile-avatar",
+          "component": "avatar",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "size": "lg"
+          },
+          "classes": "col-span-1 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "profile-actions",
+          "component": "card",
+          "grid_position": {
+            "column": 4,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Quick Actions"
+          },
+          "classes": "col-span-8 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "manage-profile-page",
+      "title": "Manage Profile",
+      "description": null,
+      "route": "/profile/manage",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "manage-profile-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "showBack": true,
+            "title": "Manage Profile"
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "manage-profile-form",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Profile Details"
+          },
+          "classes": "col-span-8 row-span-3",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "avatar-selector",
+          "component": "avatar",
+          "grid_position": {
+            "column": 8,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "size": "xl"
+          },
+          "classes": "col-span-4 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "save-profile-btn",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "accent",
+            "label": "Save Changes"
+          },
+          "classes": "col-span-4 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "create-todo-page",
+      "title": "Create Project",
+      "description": null,
+      "route": "/todos/create_todo",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "create-todo-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "showBack": true,
+            "title": "Create Project"
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "basic-info-section",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Basic Info"
+          },
+          "classes": "col-span-6 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "todo-title-input",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "placeholder": "Project title",
+            "label": "Title",
+            "required": true
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "todo-description-input",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "type": "textarea",
+            "placeholder": "Project description",
+            "label": "Description"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "category-section",
+          "component": "card",
+          "grid_position": {
+            "column": 6,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Categories"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "priority-section",
+          "component": "card",
+          "grid_position": {
+            "column": 6,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Priority"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "visibility-section",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Visibility"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "assignees-section",
+          "component": "card",
+          "grid_position": {
+            "column": 6,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Assignees"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "create-todo-submit",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "accent",
+            "label": "Create Project"
+          },
+          "classes": "col-span-4 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "create-todo-cancel",
+          "component": "button",
+          "grid_position": {
+            "column": 4,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "secondary",
+            "label": "Cancel"
+          },
+          "classes": "col-span-4 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "edit-todo-page",
+      "title": "Edit Project",
+      "description": null,
+      "route": "/todos/:todoId/edit_todo",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "edit-todo-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Edit Project",
+            "showBack": true
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "edit-basic-info",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Basic Info"
+          },
+          "classes": "col-span-6 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "edit-todo-title",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Title"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "edit-todo-description",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "type": "textarea",
+            "label": "Description"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "edit-category",
+          "component": "card",
+          "grid_position": {
+            "column": 6,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Categories"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "edit-priority",
+          "component": "card",
+          "grid_position": {
+            "column": 6,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Priority"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "edit-visibility",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Visibility"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "edit-assignees",
+          "component": "card",
+          "grid_position": {
+            "column": 6,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Assignees"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "edit-todo-submit",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Save Changes",
+            "variant": "accent"
+          },
+          "classes": "col-span-4 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "create-task-page",
+      "title": "Create Task",
+      "description": null,
+      "route": "/todos/:todoId/tasks/create_task",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "create-task-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "showBack": true,
+            "title": "Create Task"
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "task-basic-info",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Basic Info"
+          },
+          "classes": "col-span-6 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "task-title-input",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "required": true,
+            "label": "Title"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "task-description-input",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "type": "textarea",
+            "label": "Description"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "task-priority",
+          "component": "card",
+          "grid_position": {
+            "column": 6,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Priority"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "task-timeline",
+          "component": "card",
+          "grid_position": {
+            "column": 6,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Timeline"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "create-task-submit",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "accent",
+            "label": "Create Task"
+          },
+          "classes": "col-span-4 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "edit-task-page",
+      "title": "Edit Task",
+      "description": null,
+      "route": "/todos/:todoId/tasks/:taskId/edit_task",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "edit-task-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "showBack": true,
+            "title": "Edit Task"
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "edit-task-basic",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Basic Info"
+          },
+          "classes": "col-span-6 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "edit-task-title",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Title"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "edit-task-description",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Description",
+            "type": "textarea"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "edit-task-priority",
+          "component": "card",
+          "grid_position": {
+            "column": 6,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Priority"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "edit-task-timeline",
+          "component": "card",
+          "grid_position": {
+            "column": 6,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Timeline"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "edit-task-submit",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "accent",
+            "label": "Save Changes"
+          },
+          "classes": "col-span-4 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "create-subtask-page",
+      "title": "Create Subtask",
+      "description": null,
+      "route": "/todos/:todoId/tasks/:taskId/subtasks/create_subtask",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "create-subtask-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "showBack": true,
+            "title": "Create Subtask"
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "subtask-form",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Subtask Details"
+          },
+          "classes": "col-span-8 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "subtask-title-input",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Title",
+            "required": true
+          },
+          "classes": "col-span-8 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "subtask-description-input",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "type": "textarea",
+            "label": "Description"
+          },
+          "classes": "col-span-8 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "create-subtask-submit",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "accent",
+            "label": "Create Subtask"
+          },
+          "classes": "col-span-4 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "edit-subtask-page",
+      "title": "Edit Subtask",
+      "description": null,
+      "route": "/todos/:todoId/tasks/:taskId/subtasks/:subtaskId/edit_subtask",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "edit-subtask-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "showBack": true,
+            "title": "Edit Subtask"
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "edit-subtask-form",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Subtask Details"
+          },
+          "classes": "col-span-8 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "edit-subtask-title",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Title"
+          },
+          "classes": "col-span-8 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "edit-subtask-description",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Description",
+            "type": "textarea"
+          },
+          "classes": "col-span-8 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "edit-subtask-submit",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "accent",
+            "label": "Save Changes"
+          },
+          "classes": "col-span-4 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "settings-page",
+      "title": "Settings",
+      "description": null,
+      "route": "/settings",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "settings-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "showBack": false,
+            "title": "Settings"
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-tabs",
+          "component": "tabs",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "tabs": [
+              "Notifications",
+              "Security",
+              "Integrations",
+              "Appearance"
+            ]
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "notifications-section",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Notification Settings"
+          },
+          "classes": "col-span-6 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "chat-volume-slider",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "min": 0,
+            "max": 100,
+            "label": "Chat Volume",
+            "value": 50
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "notification-sounds-toggle",
+          "component": "switch",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Enable Notification Sounds",
+            "checked": true
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "security-section",
+          "component": "card",
+          "grid_position": {
+            "column": 6,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Security Settings"
+          },
+          "classes": "col-span-6 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "totp-toggle",
+          "component": "switch",
+          "grid_position": {
+            "column": 6,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "checked": false,
+            "label": "Enable TOTP"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "appearance-section",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Appearance"
+          },
+          "classes": "col-span-12 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "theme-grid",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "active": "system",
+            "options": [
+              {
+                "id": "light",
+                "label": "Light",
+                "icon": "light_mode"
+              },
+              {
+                "id": "dark",
+                "label": "Dark",
+                "icon": "dark_mode"
+              },
+              {
+                "id": "system",
+                "label": "System",
+                "icon": "settings_suggest"
+              }
+            ]
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "save-settings-btn",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Save Settings",
+            "variant": "accent"
+          },
+          "classes": "col-span-4 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "categories-page",
+      "title": "Categories",
+      "description": null,
+      "route": "/categories",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "categories-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Categories",
+            "showBack": false
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "categories-view-toggle",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "options": [
+              {
+                "id": "table",
+                "label": "Table"
+              },
+              {
+                "id": "grid",
+                "label": "Grid"
+              },
+              {
+                "id": "list",
+                "label": "List"
+              }
+            ],
+            "active": "table"
+          },
+          "classes": "col-span-4 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "categories-list",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Categories"
+          },
+          "classes": "col-span-8 row-span-3",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "category-form",
+          "component": "card",
+          "grid_position": {
+            "column": 8,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Add Category"
+          },
+          "classes": "col-span-4 row-span-3",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "category-name-input",
+          "component": "input",
+          "grid_position": {
+            "column": 8,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Category Name"
+          },
+          "classes": "col-span-4 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "add-category-btn",
+          "component": "button",
+          "grid_position": {
+            "column": 8,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Add Category",
+            "variant": "accent"
+          },
+          "classes": "col-span-4 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "sync-page",
+      "title": "Data Synchronization",
+      "description": null,
+      "route": "/sync",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "sync-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "showBack": false,
+            "title": "Data Synchronization"
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sync-status-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Sync Status"
+          },
+          "classes": "col-span-6 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sync-actions-card",
+          "component": "card",
+          "grid_position": {
+            "column": 6,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Actions"
+          },
+          "classes": "col-span-6 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sync-now-btn",
+          "component": "button",
+          "grid_position": {
+            "column": 6,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "accent",
+            "label": "Sync Now",
+            "icon": "sync"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "export-btn",
+          "component": "button",
+          "grid_position": {
+            "column": 6,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "cloud_upload",
+            "variant": "secondary",
+            "label": "Export to Cloud"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sync-history",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Sync History"
+          },
+          "classes": "col-span-12 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "archive-page",
+      "title": "Archive",
+      "description": null,
+      "route": "/archive",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "archive-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Archive",
+            "showBack": false
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "archive-list",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Archived Items"
+          },
+          "classes": "col-span-12 row-span-4",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "data-management-page",
+      "title": "Data Management",
+      "description": null,
+      "route": "/data-management",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "data-mgmt-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Data Management",
+            "showBack": false
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "data-view-toggle",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "active": "admin",
+            "options": [
+              {
+                "id": "admin",
+                "label": "Admin"
+              },
+              {
+                "id": "archive",
+                "label": "Archive"
+              }
+            ]
+          },
+          "classes": "col-span-4 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "data-table",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Data Management"
+          },
+          "classes": "col-span-12 row-span-4",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "bulk-actions",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Bulk Actions",
+            "variant": "secondary"
+          },
+          "classes": "col-span-4 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "about-page",
+      "title": "About",
+      "description": null,
+      "route": "/about",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "about-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "About",
+            "showBack": false
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "about-info-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "TaskFlow",
+            "subtitle": "Version 1.0.0"
+          },
+          "classes": "col-span-6 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "about-description",
+          "component": "card",
+          "grid_position": {
+            "column": 6,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "message": "TaskFlow is a project and task management application",
+            "title": "About"
+          },
+          "classes": "col-span-6 row-span-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "check-updates-btn",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Check for Updates",
+            "variant": "accent",
+            "icon": "update"
+          },
+          "classes": "col-span-4 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "not-found-page",
+      "title": "Not Found",
+      "description": null,
+      "route": "/404",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "not-found-empty-state",
+          "component": "div",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "message": "The page you're looking for doesn't exist.",
+            "title": "Page Not Found"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "go-home-button",
+          "component": "button",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Go Home",
+            "variant": "primary"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "schema-error-page",
+      "title": "Schema Error",
+      "description": null,
+      "route": "/schema-error",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "schema-error-empty-state",
+          "component": "div",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "message": "The schema could not be loaded.",
+            "title": "Schema Not Found"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "reload-button",
+          "component": "button",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Reload",
+            "variant": "primary"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    }
+  ],
+  "shortcuts": [],
+  "modals": []
+}

@@ -1,0 +1,4857 @@
+{
+  "app_id": "cleanux",
+  "version": "1.0.0",
+  "pages": [
+    {
+      "id": "home",
+      "title": "Home",
+      "description": null,
+      "route": "/",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "app-header-region",
+          "component": "header",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "showSearch": true,
+            "title": "Cleanux",
+            "logo": "Cleanux",
+            "showUserMenu": true
+          },
+          "classes": "flex items-center justify-between gap-4 px-6 py-3 bg-base-100 border-b border-base-300",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "app-sidebar-region",
+          "component": "sidebar",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Cleanux",
+            "collapsible": true
+          },
+          "classes": "flex flex-col gap-2 p-4 bg-base-200 min-h-screen w-64 border-r border-base-300",
+          "children": [
+            {
+              "id": "nav-group-system",
+              "component": "div",
+              "grid_position": {
+                "column": 0,
+                "row": 0,
+                "col_span": 0,
+                "row_span": 0,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {
+                "icon": "computer",
+                "label": "System"
+              },
+              "classes": "flex flex-col gap-1 mt-2",
+              "children": [
+                {
+                  "id": "nav-dashboard",
+                  "component": "div",
+                  "grid_position": {
+                    "column": 0,
+                    "row": 0,
+                    "col_span": 0,
+                    "row_span": 0,
+                    "col_start": null,
+                    "row_start": null
+                  },
+                  "props": {
+                    "route": "/dashboard",
+                    "label": "Dashboard",
+                    "icon": "dashboard"
+                  },
+                  "classes": "flex items-center gap-2 px-3 py-2 rounded-md hover:bg-base-300",
+                  "children": [],
+                  "data_binding": null,
+                  "type_field": null,
+                  "visible": true,
+                  "layout": null
+                },
+                {
+                  "id": "nav-files",
+                  "component": "div",
+                  "grid_position": {
+                    "column": 0,
+                    "row": 0,
+                    "col_span": 0,
+                    "row_span": 0,
+                    "col_start": null,
+                    "row_start": null
+                  },
+                  "props": {
+                    "label": "Files",
+                    "route": "/files",
+                    "icon": "folder"
+                  },
+                  "classes": "flex items-center gap-2 px-3 py-2 rounded-md hover:bg-base-300",
+                  "children": [],
+                  "data_binding": null,
+                  "type_field": null,
+                  "visible": true,
+                  "layout": null
+                },
+                {
+                  "id": "nav-clean",
+                  "component": "div",
+                  "grid_position": {
+                    "column": 0,
+                    "row": 0,
+                    "col_span": 0,
+                    "row_span": 0,
+                    "col_start": null,
+                    "row_start": null
+                  },
+                  "props": {
+                    "icon": "cleaning_services",
+                    "label": "Clean",
+                    "route": "/clean"
+                  },
+                  "classes": "flex items-center gap-2 px-3 py-2 rounded-md hover:bg-base-300",
+                  "children": [],
+                  "data_binding": null,
+                  "type_field": null,
+                  "visible": true,
+                  "layout": null
+                },
+                {
+                  "id": "nav-optimize",
+                  "component": "div",
+                  "grid_position": {
+                    "column": 0,
+                    "row": 0,
+                    "col_span": 0,
+                    "row_span": 0,
+                    "col_start": null,
+                    "row_start": null
+                  },
+                  "props": {
+                    "route": "/optimize",
+                    "label": "Optimize",
+                    "icon": "speed"
+                  },
+                  "classes": "flex items-center gap-2 px-3 py-2 rounded-md hover:bg-base-300",
+                  "children": [],
+                  "data_binding": null,
+                  "type_field": null,
+                  "visible": true,
+                  "layout": null
+                }
+              ],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            },
+            {
+              "id": "nav-group-maintenance",
+              "component": "div",
+              "grid_position": {
+                "column": 0,
+                "row": 0,
+                "col_span": 0,
+                "row_span": 0,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {
+                "icon": "build",
+                "label": "Maintenance"
+              },
+              "classes": "flex flex-col gap-1 mt-4",
+              "children": [
+                {
+                  "id": "nav-registry",
+                  "component": "div",
+                  "grid_position": {
+                    "column": 0,
+                    "row": 0,
+                    "col_span": 0,
+                    "row_span": 0,
+                    "col_start": null,
+                    "row_start": null
+                  },
+                  "props": {
+                    "icon": "storage",
+                    "route": "/registry",
+                    "label": "Registry"
+                  },
+                  "classes": "flex items-center gap-2 px-3 py-2 rounded-md hover:bg-base-300",
+                  "children": [],
+                  "data_binding": null,
+                  "type_field": null,
+                  "visible": true,
+                  "layout": null
+                },
+                {
+                  "id": "nav-services",
+                  "component": "div",
+                  "grid_position": {
+                    "column": 0,
+                    "row": 0,
+                    "col_span": 0,
+                    "row_span": 0,
+                    "col_start": null,
+                    "row_start": null
+                  },
+                  "props": {
+                    "label": "Services",
+                    "icon": "settings_applications",
+                    "route": "/services"
+                  },
+                  "classes": "flex items-center gap-2 px-3 py-2 rounded-md hover:bg-base-300",
+                  "children": [],
+                  "data_binding": null,
+                  "type_field": null,
+                  "visible": true,
+                  "layout": null
+                },
+                {
+                  "id": "nav-startup",
+                  "component": "div",
+                  "grid_position": {
+                    "column": 0,
+                    "row": 0,
+                    "col_span": 0,
+                    "row_span": 0,
+                    "col_start": null,
+                    "row_start": null
+                  },
+                  "props": {
+                    "route": "/startup",
+                    "label": "Startup",
+                    "icon": "rocket_launch"
+                  },
+                  "classes": "flex items-center gap-2 px-3 py-2 rounded-md hover:bg-base-300",
+                  "children": [],
+                  "data_binding": null,
+                  "type_field": null,
+                  "visible": true,
+                  "layout": null
+                }
+              ],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            },
+            {
+              "id": "nav-group-tools",
+              "component": "div",
+              "grid_position": {
+                "column": 0,
+                "row": 0,
+                "col_span": 0,
+                "row_span": 0,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {
+                "icon": "handyman",
+                "label": "Tools"
+              },
+              "classes": "flex flex-col gap-1 mt-4",
+              "children": [
+                {
+                  "id": "nav-power",
+                  "component": "div",
+                  "grid_position": {
+                    "column": 0,
+                    "row": 0,
+                    "col_span": 0,
+                    "row_span": 0,
+                    "col_start": null,
+                    "row_start": null
+                  },
+                  "props": {
+                    "label": "Power",
+                    "icon": "power_settings_new",
+                    "route": "/power"
+                  },
+                  "classes": "flex items-center gap-2 px-3 py-2 rounded-md hover:bg-base-300",
+                  "children": [],
+                  "data_binding": null,
+                  "type_field": null,
+                  "visible": true,
+                  "layout": null
+                },
+                {
+                  "id": "nav-settings",
+                  "component": "div",
+                  "grid_position": {
+                    "column": 0,
+                    "row": 0,
+                    "col_span": 0,
+                    "row_span": 0,
+                    "col_start": null,
+                    "row_start": null
+                  },
+                  "props": {
+                    "label": "Settings",
+                    "icon": "settings",
+                    "route": "/settings"
+                  },
+                  "classes": "flex items-center gap-2 px-3 py-2 rounded-md hover:bg-base-300",
+                  "children": [],
+                  "data_binding": null,
+                  "type_field": null,
+                  "visible": true,
+                  "layout": null
+                },
+                {
+                  "id": "nav-about",
+                  "component": "div",
+                  "grid_position": {
+                    "column": 0,
+                    "row": 0,
+                    "col_span": 0,
+                    "row_span": 0,
+                    "col_start": null,
+                    "row_start": null
+                  },
+                  "props": {
+                    "route": "/about",
+                    "icon": "info",
+                    "label": "About"
+                  },
+                  "classes": "flex items-center gap-2 px-3 py-2 rounded-md hover:bg-base-300",
+                  "children": [],
+                  "data_binding": null,
+                  "type_field": null,
+                  "visible": true,
+                  "layout": null
+                },
+                {
+                  "id": "nav-logs",
+                  "component": "div",
+                  "grid_position": {
+                    "column": 0,
+                    "row": 0,
+                    "col_span": 0,
+                    "row_span": 0,
+                    "col_start": null,
+                    "row_start": null
+                  },
+                  "props": {
+                    "icon": "description",
+                    "label": "Logs",
+                    "route": "/logs"
+                  },
+                  "classes": "flex items-center gap-2 px-3 py-2 rounded-md hover:bg-base-300",
+                  "children": [],
+                  "data_binding": null,
+                  "type_field": null,
+                  "visible": true,
+                  "layout": null
+                },
+                {
+                  "id": "nav-scheduler",
+                  "component": "div",
+                  "grid_position": {
+                    "column": 0,
+                    "row": 0,
+                    "col_span": 0,
+                    "row_span": 0,
+                    "col_start": null,
+                    "row_start": null
+                  },
+                  "props": {
+                    "route": "/scheduler",
+                    "label": "Scheduler",
+                    "icon": "schedule"
+                  },
+                  "classes": "flex items-center gap-2 px-3 py-2 rounded-md hover:bg-base-300",
+                  "children": [],
+                  "data_binding": null,
+                  "type_field": null,
+                  "visible": true,
+                  "layout": null
+                }
+              ],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            }
+          ],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "dashboard-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "actions": [],
+            "title": "Dashboard",
+            "icon": "dashboard"
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stats-disk",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "trend": "down",
+            "icon": "storage",
+            "value": "428 GB free",
+            "label": "Disk Space"
+          },
+          "classes": "col-span-3 row-span-1 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stats-memory",
+          "component": "div",
+          "grid_position": {
+            "column": 4,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Memory",
+            "icon": "memory",
+            "trend": "down",
+            "value": "12.4 / 32 GB"
+          },
+          "classes": "col-span-3 row-span-1 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stats-cpu",
+          "component": "div",
+          "grid_position": {
+            "column": 7,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "CPU",
+            "trend": "up",
+            "value": "23%",
+            "icon": "speed"
+          },
+          "classes": "col-span-3 row-span-1 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stats-startup",
+          "component": "div",
+          "grid_position": {
+            "column": 10,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "value": "14",
+            "icon": "rocket_launch",
+            "label": "Startup Items"
+          },
+          "classes": "col-span-3 row-span-1 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "quick-clean-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "actions": [
+              {
+                "id": "quick-clean-btn",
+                "variant": "primary",
+                "icon": "play_arrow",
+                "label": "Run Quick Clean"
+              }
+            ],
+            "padding": "md",
+            "icon": "cleaning_services",
+            "title": "Quick Clean"
+          },
+          "classes": "col-span-6 row-span-2 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "system-status-card",
+          "component": "card",
+          "grid_position": {
+            "column": 7,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "monitor_heart",
+            "title": "System Status",
+            "padding": "md"
+          },
+          "classes": "col-span-6 row-span-2 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "recent-activity",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "dataSource": "recent_activity",
+            "columns": [
+              {
+                "key": "time",
+                "label": "Time"
+              },
+              {
+                "key": "action",
+                "label": "Action"
+              },
+              {
+                "key": "result",
+                "label": "Result"
+              }
+            ],
+            "pageSize": 10,
+            "viewModes": [
+              "list"
+            ]
+          },
+          "classes": "col-span-12 row-span-3 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "dashboard",
+      "title": "Dashboard",
+      "description": null,
+      "route": "/dashboard",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "dashboard-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "actions": [],
+            "icon": "dashboard",
+            "title": "Dashboard"
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stats-disk",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Disk Space",
+            "icon": "storage",
+            "trend": "down",
+            "value": "428 GB free"
+          },
+          "classes": "col-span-3 row-span-1 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stats-memory",
+          "component": "div",
+          "grid_position": {
+            "column": 4,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Memory",
+            "icon": "memory",
+            "value": "12.4 / 32 GB",
+            "trend": "down"
+          },
+          "classes": "col-span-3 row-span-1 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stats-cpu",
+          "component": "div",
+          "grid_position": {
+            "column": 7,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "CPU",
+            "trend": "up",
+            "icon": "speed",
+            "value": "23%"
+          },
+          "classes": "col-span-3 row-span-1 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "stats-startup",
+          "component": "div",
+          "grid_position": {
+            "column": 10,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "rocket_launch",
+            "label": "Startup Items",
+            "value": "14"
+          },
+          "classes": "col-span-3 row-span-1 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "quick-clean-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "padding": "md",
+            "actions": [
+              {
+                "id": "quick-clean-btn",
+                "variant": "primary",
+                "icon": "play_arrow",
+                "label": "Run Quick Clean"
+              }
+            ],
+            "title": "Quick Clean",
+            "icon": "cleaning_services"
+          },
+          "classes": "col-span-6 row-span-2 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "system-status-card",
+          "component": "card",
+          "grid_position": {
+            "column": 7,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "System Status",
+            "padding": "md",
+            "icon": "monitor_heart"
+          },
+          "classes": "col-span-6 row-span-2 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "recent-activity",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "columns": [
+              {
+                "key": "time",
+                "label": "Time"
+              },
+              {
+                "key": "action",
+                "label": "Action"
+              },
+              {
+                "key": "result",
+                "label": "Result"
+              }
+            ],
+            "dataSource": "recent_activity",
+            "pageSize": 10,
+            "viewModes": [
+              "list"
+            ]
+          },
+          "classes": "col-span-12 row-span-3 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "files",
+      "title": "Files",
+      "description": null,
+      "route": "/files",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "files-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "actions": [],
+            "icon": "folder",
+            "title": "Files"
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "files-filter-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "padding": "md",
+            "icon": "filter_list",
+            "title": "Filters",
+            "controls": [
+              "size",
+              "modified",
+              "type"
+            ]
+          },
+          "classes": "col-span-12 row-span-1 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "files-table",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "dataSource": "file_listing",
+            "pageSize": 25,
+            "viewModes": [
+              "list",
+              "grid"
+            ],
+            "columns": [
+              {
+                "key": "filename",
+                "label": "Filename"
+              },
+              {
+                "key": "path",
+                "label": "Path"
+              },
+              {
+                "key": "size",
+                "label": "Size"
+              },
+              {
+                "key": "modified",
+                "label": "Modified"
+              }
+            ]
+          },
+          "classes": "col-span-12 row-span-5 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "clean",
+      "title": "Clean",
+      "description": null,
+      "route": "/clean",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "clean-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "cleaning_services",
+            "actions": [],
+            "title": "Clean"
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "clean-mode",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "options": [
+              {
+                "value": "quick",
+                "label": "Quick",
+                "icon": "bolt"
+              },
+              {
+                "value": "full",
+                "label": "Full",
+                "icon": "all_inclusive"
+              },
+              {
+                "value": "custom",
+                "label": "Custom",
+                "icon": "tune"
+              }
+            ],
+            "value": "quick"
+          },
+          "classes": "col-span-12 row-span-1 p-2 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "clean-temp",
+          "component": "checkbox",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Temp Files",
+            "checked": true
+          },
+          "classes": "col-span-3 row-span-2 flex items-center gap-2 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "clean-cache",
+          "component": "checkbox",
+          "grid_position": {
+            "column": 4,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "checked": true,
+            "label": "Cache"
+          },
+          "classes": "col-span-3 row-span-2 flex items-center gap-2 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "clean-logs",
+          "component": "checkbox",
+          "grid_position": {
+            "column": 7,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Logs",
+            "checked": true
+          },
+          "classes": "col-span-3 row-span-2 flex items-center gap-2 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "clean-recycle",
+          "component": "checkbox",
+          "grid_position": {
+            "column": 10,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "checked": false,
+            "label": "Recycle Bin"
+          },
+          "classes": "col-span-3 row-span-2 flex items-center gap-2 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "clean-progress",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Clean progress",
+            "value": 0,
+            "max": 100
+          },
+          "classes": "col-span-12 row-span-2 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "clean-start-btn",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 7,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Start Cleaning",
+            "variant": "primary",
+            "icon": "play_arrow",
+            "disabled": false
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "optimize",
+      "title": "Optimize",
+      "description": null,
+      "route": "/optimize",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "optimize-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "speed",
+            "actions": [],
+            "title": "Optimize"
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "opt-perf",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "trend": "up",
+            "label": "Performance",
+            "icon": "speed",
+            "value": "82 / 100"
+          },
+          "classes": "col-span-3 row-span-1 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "opt-fragmentation",
+          "component": "div",
+          "grid_position": {
+            "column": 4,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "blur_on",
+            "trend": "down",
+            "label": "Fragmentation",
+            "value": "4%"
+          },
+          "classes": "col-span-3 row-span-1 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "opt-boot",
+          "component": "div",
+          "grid_position": {
+            "column": 7,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "value": "18.2 s",
+            "trend": "down",
+            "icon": "timer",
+            "label": "Boot Time"
+          },
+          "classes": "col-span-3 row-span-1 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "opt-updates",
+          "component": "div",
+          "grid_position": {
+            "column": 10,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Pending Updates",
+            "value": "3",
+            "icon": "system_update"
+          },
+          "classes": "col-span-3 row-span-1 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "opt-defrag",
+          "component": "switch",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "checked": false,
+            "label": "Defragment Drives"
+          },
+          "classes": "col-span-12 row-span-1 flex items-center justify-between p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "opt-drivers",
+          "component": "switch",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "checked": true,
+            "label": "Update Drivers"
+          },
+          "classes": "col-span-12 row-span-1 flex items-center justify-between p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "opt-startup",
+          "component": "switch",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "checked": true,
+            "label": "Trim Startup Items"
+          },
+          "classes": "col-span-12 row-span-1 flex items-center justify-between p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "opt-sched",
+          "component": "switch",
+          "grid_position": {
+            "column": 1,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Schedule Weekly Tune-up",
+            "checked": false
+          },
+          "classes": "col-span-12 row-span-1 flex items-center justify-between p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "registry",
+      "title": "Registry",
+      "description": null,
+      "route": "/registry",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "registry-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "actions": [],
+            "icon": "storage",
+            "title": "Registry"
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "registry-search",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "type": "search",
+            "value": "",
+            "placeholder": "Search registry keys…",
+            "label": "Search"
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "registry-table",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "columns": [
+              {
+                "key": "key",
+                "label": "Key"
+              },
+              {
+                "key": "value",
+                "label": "Value"
+              },
+              {
+                "key": "type",
+                "label": "Type"
+              }
+            ],
+            "dataSource": "registry_entries",
+            "pageSize": 25,
+            "viewModes": [
+              "list"
+            ]
+          },
+          "classes": "col-span-12 row-span-5 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "services",
+      "title": "Services",
+      "description": null,
+      "route": "/services",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "services-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Services",
+            "icon": "settings_applications",
+            "actions": []
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "services-filter",
+          "component": "select",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Status",
+            "options": [
+              {
+                "value": "all",
+                "label": "All"
+              },
+              {
+                "value": "running",
+                "label": "Running"
+              },
+              {
+                "value": "stopped",
+                "label": "Stopped"
+              }
+            ],
+            "value": "all"
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "services-table",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "columns": [
+              {
+                "key": "name",
+                "label": "Name"
+              },
+              {
+                "key": "status",
+                "label": "Status"
+              },
+              {
+                "key": "startup_type",
+                "label": "Startup Type"
+              }
+            ],
+            "dataSource": "service_list",
+            "pageSize": 25,
+            "viewModes": [
+              "list"
+            ]
+          },
+          "classes": "col-span-12 row-span-5 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "startup",
+      "title": "Startup",
+      "description": null,
+      "route": "/startup",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "startup-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Startup",
+            "icon": "rocket_launch",
+            "actions": []
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "startup-table",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "viewModes": [
+              "list"
+            ],
+            "dataSource": "startup_programs",
+            "columns": [
+              {
+                "key": "program",
+                "label": "Program"
+              },
+              {
+                "key": "publisher",
+                "label": "Publisher"
+              },
+              {
+                "key": "impact",
+                "label": "Impact"
+              }
+            ],
+            "pageSize": 25
+          },
+          "classes": "col-span-12 row-span-6 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "power",
+      "title": "Power",
+      "description": null,
+      "route": "/power",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "power-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "actions": [],
+            "icon": "power_settings_new",
+            "title": "Power"
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "power-shutdown-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "power_settings_new",
+            "actions": [
+              {
+                "variant": "danger",
+                "icon": "power_settings_new",
+                "label": "Shutdown"
+              }
+            ],
+            "description": "Power off the system cleanly.",
+            "title": "Shutdown",
+            "padding": "md"
+          },
+          "classes": "col-span-6 row-span-2 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "power-restart-card",
+          "component": "card",
+          "grid_position": {
+            "column": 7,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "actions": [
+              {
+                "variant": "primary",
+                "icon": "restart_alt",
+                "label": "Restart"
+              }
+            ],
+            "title": "Restart",
+            "icon": "restart_alt",
+            "padding": "md",
+            "description": "Restart the system."
+          },
+          "classes": "col-span-6 row-span-2 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "power-logout-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "padding": "md",
+            "icon": "logout",
+            "title": "Logout",
+            "description": "Sign out the current user.",
+            "actions": [
+              {
+                "variant": "secondary",
+                "icon": "logout",
+                "label": "Logout"
+              }
+            ]
+          },
+          "classes": "col-span-6 row-span-2 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "power-sleep-card",
+          "component": "card",
+          "grid_position": {
+            "column": 7,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Sleep",
+            "description": "Suspend the system to RAM.",
+            "actions": [
+              {
+                "variant": "secondary",
+                "icon": "bedtime",
+                "label": "Sleep"
+              }
+            ],
+            "padding": "md",
+            "icon": "bedtime"
+          },
+          "classes": "col-span-6 row-span-2 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "power-delay",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "value": 5,
+            "step": 1,
+            "label": "Action delay (seconds)",
+            "max": 60,
+            "min": 0
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "settings",
+      "title": "Settings",
+      "description": null,
+      "route": "/settings",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "settings-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Settings",
+            "icon": "settings",
+            "actions": []
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-theme",
+          "component": "switch",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "checked": true,
+            "label": "Use Dark Theme"
+          },
+          "classes": "col-span-12 row-span-1 flex items-center justify-between p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-auto-clean",
+          "component": "switch",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "checked": false,
+            "label": "Auto-clean Weekly"
+          },
+          "classes": "col-span-12 row-span-1 flex items-center justify-between p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-notifications",
+          "component": "switch",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "checked": true,
+            "label": "Show Notifications"
+          },
+          "classes": "col-span-12 row-span-1 flex items-center justify-between p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-schedule",
+          "component": "switch",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "checked": false,
+            "label": "Run Scheduled Tasks"
+          },
+          "classes": "col-span-12 row-span-1 flex items-center justify-between p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-defaults",
+          "component": "switch",
+          "grid_position": {
+            "column": 1,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "checked": true,
+            "label": "Restore Defaults on Reset"
+          },
+          "classes": "col-span-12 row-span-1 flex items-center justify-between p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-save-btn",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 7,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "save",
+            "label": "Save Settings",
+            "variant": "primary",
+            "disabled": false
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "about",
+      "title": "About",
+      "description": null,
+      "route": "/about",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "about-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "About",
+            "actions": [],
+            "icon": "info"
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "about-app-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "apps",
+            "padding": "md",
+            "title": "Cleanux",
+            "description": "Windows system cleanup utility."
+          },
+          "classes": "col-span-6 row-span-3 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "about-version-card",
+          "component": "card",
+          "grid_position": {
+            "column": 7,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "padding": "md",
+            "icon": "tag",
+            "description": "v1.0.0 (build 2026.07.06)",
+            "title": "Version"
+          },
+          "classes": "col-span-6 row-span-3 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "about-credits-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "padding": "md",
+            "title": "Credits",
+            "icon": "people",
+            "description": "Built with Tauri v2, Angular 20, Lit Web Components."
+          },
+          "classes": "col-span-12 row-span-2 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "logs",
+      "title": "Logs",
+      "description": null,
+      "route": "/logs",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "logs-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Logs",
+            "icon": "description",
+            "actions": []
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "log-level-selector",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "value": "all",
+            "options": [
+              {
+                "value": "all",
+                "label": "All"
+              },
+              {
+                "value": "info",
+                "label": "Info"
+              },
+              {
+                "value": "warn",
+                "label": "Warn"
+              },
+              {
+                "value": "error",
+                "label": "Error"
+              },
+              {
+                "value": "debug",
+                "label": "Debug"
+              }
+            ]
+          },
+          "classes": "col-span-12 row-span-1 p-2 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "log-entries",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "viewModes": [
+              "list"
+            ],
+            "columns": [
+              {
+                "key": "timestamp",
+                "label": "Timestamp"
+              },
+              {
+                "key": "level",
+                "label": "Level"
+              },
+              {
+                "key": "message",
+                "label": "Message"
+              }
+            ],
+            "dataSource": "log_entries",
+            "pageSize": 50
+          },
+          "classes": "col-span-12 row-span-5 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "scheduler",
+      "title": "Scheduler",
+      "description": null,
+      "route": "/scheduler",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "scheduler-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Scheduler",
+            "icon": "schedule",
+            "actions": []
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "scheduler-tasks",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "columns": [
+              {
+                "key": "name",
+                "label": "Task"
+              },
+              {
+                "key": "trigger",
+                "label": "Trigger"
+              },
+              {
+                "key": "next_run",
+                "label": "Next Run"
+              },
+              {
+                "key": "enabled",
+                "label": "Enabled"
+              }
+            ],
+            "dataSource": "scheduled_tasks",
+            "pageSize": 25,
+            "viewModes": [
+              "list"
+            ]
+          },
+          "classes": "col-span-12 row-span-5 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "scheduler-create-btn",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 7,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "add",
+            "label": "Create Task",
+            "disabled": false,
+            "variant": "primary"
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "uninstaller",
+      "title": "Uninstaller",
+      "description": null,
+      "route": "/uninstaller",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "uninstaller-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "delete_sweep",
+            "actions": [],
+            "title": "Uninstaller"
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "uninstaller-search",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "type": "search",
+            "placeholder": "Search installed programs…",
+            "label": "Search",
+            "value": ""
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "uninstaller-table",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "pageSize": 25,
+            "viewModes": [
+              "list",
+              "grid"
+            ],
+            "columns": [
+              {
+                "key": "program",
+                "label": "Program"
+              },
+              {
+                "key": "publisher",
+                "label": "Publisher"
+              },
+              {
+                "key": "install_date",
+                "label": "Install Date"
+              },
+              {
+                "key": "size",
+                "label": "Size"
+              }
+            ],
+            "dataSource": "installed_programs"
+          },
+          "classes": "col-span-12 row-span-5 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "disk-analyzer",
+      "title": "Disk Analyzer",
+      "description": null,
+      "route": "/disk-analyzer",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "disk-analyzer-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Disk Analyzer",
+            "icon": "donut_large",
+            "actions": []
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "disk-vis-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "padding": "md",
+            "title": "Disk Usage Visualization",
+            "icon": "donut_large"
+          },
+          "classes": "col-span-6 row-span-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "disk-tree-card",
+          "component": "card",
+          "grid_position": {
+            "column": 7,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "account_tree",
+            "title": "Folder Tree",
+            "padding": "md"
+          },
+          "classes": "col-span-6 row-span-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "duplicate-finder",
+      "title": "Duplicate Finder",
+      "description": null,
+      "route": "/duplicate-finder",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "duplicate-finder-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "content_copy",
+            "title": "Duplicate Finder",
+            "actions": []
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "duplicate-search",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Search",
+            "placeholder": "Search for duplicates…",
+            "value": "",
+            "type": "search"
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "duplicate-table",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "columns": [
+              {
+                "key": "file",
+                "label": "File"
+              },
+              {
+                "key": "size",
+                "label": "Size"
+              },
+              {
+                "key": "copies",
+                "label": "Copies"
+              }
+            ],
+            "dataSource": "duplicate_files",
+            "pageSize": 25,
+            "viewModes": [
+              "list",
+              "grid"
+            ]
+          },
+          "classes": "col-span-12 row-span-5 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "memory-optimizer",
+      "title": "Memory Optimizer",
+      "description": null,
+      "route": "/memory-optimizer",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "memory-optimizer-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "actions": [],
+            "icon": "memory",
+            "title": "Memory Optimizer"
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "memory-usage-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "padding": "md",
+            "description": "Currently using 12.4 GB of 32 GB (38%).",
+            "icon": "memory",
+            "title": "Memory Usage"
+          },
+          "classes": "col-span-8 row-span-3 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "memory-optimize-btn",
+          "component": "button",
+          "grid_position": {
+            "column": 9,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Optimize Now",
+            "disabled": false,
+            "variant": "primary",
+            "icon": "auto_fix_high"
+          },
+          "classes": "col-span-4 row-span-3",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "memory-history-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Usage History",
+            "padding": "md",
+            "icon": "show_chart"
+          },
+          "classes": "col-span-12 row-span-3 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "browser-cleaner",
+      "title": "Browser Cleaner",
+      "description": null,
+      "route": "/browser-cleaner",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "browser-cleaner-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Browser Cleaner",
+            "actions": [],
+            "icon": "public"
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "browser-selector",
+          "component": "select",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "options": [
+              {
+                "value": "chrome",
+                "label": "Google Chrome"
+              },
+              {
+                "value": "firefox",
+                "label": "Mozilla Firefox"
+              },
+              {
+                "value": "edge",
+                "label": "Microsoft Edge"
+              },
+              {
+                "value": "brave",
+                "label": "Brave"
+              }
+            ],
+            "label": "Browser",
+            "value": "chrome"
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "browser-data-table",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "viewModes": [
+              "list"
+            ],
+            "columns": [
+              {
+                "key": "category",
+                "label": "Category"
+              },
+              {
+                "key": "count",
+                "label": "Items"
+              },
+              {
+                "key": "size",
+                "label": "Size"
+              }
+            ],
+            "dataSource": "browser_data",
+            "pageSize": 25
+          },
+          "classes": "col-span-12 row-span-5 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "network-tools",
+      "title": "Network Tools",
+      "description": null,
+      "route": "/network-tools",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "network-tools-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "lan",
+            "actions": [],
+            "title": "Network Tools"
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "net-ping",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "value": "24 ms",
+            "label": "Ping",
+            "trend": "down",
+            "icon": "wifi_tethering"
+          },
+          "classes": "col-span-3 row-span-1 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "net-down",
+          "component": "div",
+          "grid_position": {
+            "column": 4,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "value": "186 Mbps",
+            "trend": "up",
+            "label": "Download",
+            "icon": "download"
+          },
+          "classes": "col-span-3 row-span-1 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "net-up",
+          "component": "div",
+          "grid_position": {
+            "column": 7,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Upload",
+            "value": "42 Mbps",
+            "icon": "upload",
+            "trend": "up"
+          },
+          "classes": "col-span-3 row-span-1 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "net-loss",
+          "component": "div",
+          "grid_position": {
+            "column": 10,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Packet Loss",
+            "icon": "report",
+            "value": "0.1%"
+          },
+          "classes": "col-span-3 row-span-1 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "net-ping-host",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "type": "text",
+            "placeholder": "example.com",
+            "label": "Ping host",
+            "value": ""
+          },
+          "classes": "col-span-4 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "net-ping-btn",
+          "component": "button",
+          "grid_position": {
+            "column": 5,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "primary",
+            "label": "Ping",
+            "disabled": false,
+            "icon": "play_arrow"
+          },
+          "classes": "col-span-2 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "net-trace-host",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "type": "text",
+            "placeholder": "example.com",
+            "value": "",
+            "label": "Traceroute host"
+          },
+          "classes": "col-span-4 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "net-trace-btn",
+          "component": "button",
+          "grid_position": {
+            "column": 5,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "route",
+            "label": "Trace",
+            "variant": "secondary",
+            "disabled": false
+          },
+          "classes": "col-span-2 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "net-whois",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "placeholder": "example.com",
+            "type": "text",
+            "value": "",
+            "label": "Whois domain"
+          },
+          "classes": "col-span-4 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "net-whois-btn",
+          "component": "button",
+          "grid_position": {
+            "column": 5,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "search",
+            "label": "Whois",
+            "disabled": false,
+            "variant": "secondary"
+          },
+          "classes": "col-span-2 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "system-info",
+      "title": "System Info",
+      "description": null,
+      "route": "/system-info",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "system-info-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "computer",
+            "title": "System Info",
+            "actions": []
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sysinfo-os-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Operating System",
+            "padding": "md",
+            "icon": "computer",
+            "description": "Windows 11 Pro 23H2 (build 22631.4317)"
+          },
+          "classes": "col-span-6 row-span-3 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sysinfo-specs-card",
+          "component": "card",
+          "grid_position": {
+            "column": 7,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Hardware Specs",
+            "padding": "md",
+            "description": "Intel Core i7-13700K · 32 GB DDR5 · NVIDIA RTX 4070 · 2 TB NVMe",
+            "icon": "developer_board"
+          },
+          "classes": "col-span-6 row-span-3 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sysinfo-network-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "padding": "md",
+            "description": "192.168.1.42 · DHCP · 1 Gbps",
+            "title": "Network",
+            "icon": "lan"
+          },
+          "classes": "col-span-6 row-span-3 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sysinfo-motherboard-card",
+          "component": "card",
+          "grid_position": {
+            "column": 7,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "description": "ASUS ROG Strix Z790-E · BIOS 1801",
+            "title": "Motherboard",
+            "padding": "md",
+            "icon": "memory"
+          },
+          "classes": "col-span-6 row-span-3 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "process-manager",
+      "title": "Process Manager",
+      "description": null,
+      "route": "/process-manager",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "process-manager-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Process Manager",
+            "icon": "apps",
+            "actions": []
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "process-table",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "dataSource": "processes",
+            "columns": [
+              {
+                "key": "process",
+                "label": "Process"
+              },
+              {
+                "key": "pid",
+                "label": "PID"
+              },
+              {
+                "key": "cpu",
+                "label": "CPU"
+              },
+              {
+                "key": "memory",
+                "label": "Memory"
+              }
+            ],
+            "pageSize": 50,
+            "viewModes": [
+              "list"
+            ]
+          },
+          "classes": "col-span-12 row-span-6 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "drivers",
+      "title": "Drivers",
+      "description": null,
+      "route": "/drivers",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "drivers-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "electrical_services",
+            "title": "Drivers",
+            "actions": []
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "drivers-table",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "columns": [
+              {
+                "key": "driver",
+                "label": "Driver"
+              },
+              {
+                "key": "version",
+                "label": "Version"
+              },
+              {
+                "key": "status",
+                "label": "Status"
+              }
+            ],
+            "pageSize": 25,
+            "viewModes": [
+              "list"
+            ],
+            "dataSource": "driver_list"
+          },
+          "classes": "col-span-12 row-span-6 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "updates",
+      "title": "Updates",
+      "description": null,
+      "route": "/updates",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "updates-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "system_update",
+            "title": "Updates",
+            "actions": []
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "updates-available-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "system_update",
+            "title": "Available Updates",
+            "padding": "md",
+            "description": "3 updates pending · 1 critical · 2 optional"
+          },
+          "classes": "col-span-8 row-span-3 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "updates-install-btn",
+          "component": "button",
+          "grid_position": {
+            "column": 9,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "disabled": false,
+            "icon": "download",
+            "variant": "primary",
+            "label": "Install All"
+          },
+          "classes": "col-span-4 row-span-3",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "updates-table",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "dataSource": "available_updates",
+            "columns": [
+              {
+                "key": "name",
+                "label": "Update"
+              },
+              {
+                "key": "size",
+                "label": "Size"
+              },
+              {
+                "key": "severity",
+                "label": "Severity"
+              }
+            ],
+            "viewModes": [
+              "list"
+            ],
+            "pageSize": 25
+          },
+          "classes": "col-span-12 row-span-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "backup",
+      "title": "Backup",
+      "description": null,
+      "route": "/backup",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "backup-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Backup",
+            "actions": [],
+            "icon": "backup"
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "backup-create-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Create Backup",
+            "actions": [
+              {
+                "variant": "primary",
+                "icon": "play_arrow",
+                "label": "Create"
+              }
+            ],
+            "description": "Create a new system restore point or full backup.",
+            "icon": "add_circle",
+            "padding": "md"
+          },
+          "classes": "col-span-6 row-span-3 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "backup-restore-card",
+          "component": "card",
+          "grid_position": {
+            "column": 7,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "restore",
+            "title": "Restore Backup",
+            "padding": "md",
+            "description": "Restore from an existing backup.",
+            "actions": [
+              {
+                "variant": "secondary",
+                "icon": "history",
+                "label": "Restore"
+              }
+            ]
+          },
+          "classes": "col-span-6 row-span-3 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "backup-schedule-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "description": "Configure automatic backup frequency.",
+            "padding": "md",
+            "title": "Backup Schedule",
+            "icon": "schedule"
+          },
+          "classes": "col-span-12 row-span-2 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "security",
+      "title": "Security",
+      "description": null,
+      "route": "/security",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "security-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "security",
+            "actions": [],
+            "title": "Security"
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "security-defender-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "shield",
+            "title": "Windows Defender",
+            "description": "Active and up to date.",
+            "padding": "md"
+          },
+          "classes": "col-span-3 row-span-2 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "security-firewall-card",
+          "component": "card",
+          "grid_position": {
+            "column": 4,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Firewall",
+            "icon": "local_fire_department",
+            "description": "Domain, Private, Public profiles enabled.",
+            "padding": "md"
+          },
+          "classes": "col-span-3 row-span-2 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "security-malware-card",
+          "component": "card",
+          "grid_position": {
+            "column": 7,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "bug_report",
+            "description": "Last scan 3 days ago. No threats.",
+            "title": "Malware Scan",
+            "padding": "md"
+          },
+          "classes": "col-span-3 row-span-2 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "security-account-card",
+          "component": "card",
+          "grid_position": {
+            "column": 10,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Account Security",
+            "padding": "md",
+            "icon": "account_circle",
+            "description": "Password last changed 64 days ago."
+          },
+          "classes": "col-span-3 row-span-2 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "security-scan-btn",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "disabled": false,
+            "variant": "primary",
+            "icon": "play_arrow",
+            "label": "Run Security Scan"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "security-update-btn",
+          "component": "button",
+          "grid_position": {
+            "column": 7,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Update Definitions",
+            "variant": "secondary",
+            "disabled": false,
+            "icon": "system_update"
+          },
+          "classes": "col-span-6 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "performance",
+      "title": "Performance",
+      "description": null,
+      "route": "/performance",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "performance-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "actions": [],
+            "title": "Performance",
+            "icon": "monitoring"
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "perf-cpu",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "value": "23%",
+            "icon": "speed",
+            "trend": "up",
+            "label": "CPU"
+          },
+          "classes": "col-span-3 row-span-1 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "perf-ram",
+          "component": "div",
+          "grid_position": {
+            "column": 4,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "trend": "down",
+            "value": "12.4 GB",
+            "label": "RAM",
+            "icon": "memory"
+          },
+          "classes": "col-span-3 row-span-1 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "perf-gpu",
+          "component": "div",
+          "grid_position": {
+            "column": 7,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "videogame_asset",
+            "label": "GPU",
+            "value": "8%",
+            "trend": "down"
+          },
+          "classes": "col-span-3 row-span-1 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "perf-disk",
+          "component": "div",
+          "grid_position": {
+            "column": 10,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "value": "14 MB/s",
+            "icon": "storage",
+            "label": "Disk I/O",
+            "trend": "up"
+          },
+          "classes": "col-span-3 row-span-1 p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "perf-chart-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Performance Chart",
+            "padding": "md",
+            "description": "Live resource utilization over time.",
+            "icon": "monitoring"
+          },
+          "classes": "col-span-12 row-span-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "battery",
+      "title": "Battery",
+      "description": null,
+      "route": "/battery",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "battery-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "actions": [],
+            "title": "Battery",
+            "icon": "battery_full"
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "battery-status-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "description": "Discharging · 76% · 4h 12m remaining",
+            "padding": "md",
+            "title": "Battery Status",
+            "icon": "battery_full"
+          },
+          "classes": "col-span-6 row-span-3 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "battery-health-card",
+          "component": "card",
+          "grid_position": {
+            "column": 7,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "health_and_safety",
+            "title": "Battery Health",
+            "padding": "md",
+            "description": "Design capacity 60 Wh · Current full charge 54 Wh · 90% health"
+          },
+          "classes": "col-span-6 row-span-3 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "battery-history-table",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "dataSource": "battery_history",
+            "viewModes": [
+              "list"
+            ],
+            "columns": [
+              {
+                "key": "timestamp",
+                "label": "Time"
+              },
+              {
+                "key": "level",
+                "label": "Level"
+              },
+              {
+                "key": "rate",
+                "label": "Discharge Rate"
+              }
+            ],
+            "pageSize": 25
+          },
+          "classes": "col-span-12 row-span-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "notifications",
+      "title": "Notifications",
+      "description": null,
+      "route": "/notifications",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "notifications-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "notifications",
+            "actions": [],
+            "title": "Notifications"
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "notif-prefs-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "notifications_active",
+            "padding": "md",
+            "title": "Notification Preferences"
+          },
+          "classes": "col-span-12 row-span-1 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "notif-clean-complete",
+          "component": "switch",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "checked": true,
+            "label": "Clean complete"
+          },
+          "classes": "col-span-12 row-span-1 flex items-center justify-between p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "notif-update-available",
+          "component": "switch",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Updates available",
+            "checked": true
+          },
+          "classes": "col-span-12 row-span-1 flex items-center justify-between p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "notif-scan-complete",
+          "component": "switch",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "checked": false,
+            "label": "Scan complete"
+          },
+          "classes": "col-span-12 row-span-1 flex items-center justify-between p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "notif-error",
+          "component": "switch",
+          "grid_position": {
+            "column": 1,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Errors",
+            "checked": true
+          },
+          "classes": "col-span-12 row-span-1 flex items-center justify-between p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "profiles",
+      "title": "Profiles",
+      "description": null,
+      "route": "/profiles",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "profiles-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "actions": [],
+            "title": "Profiles",
+            "icon": "workspaces"
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "profile-gaming-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "description": "Disables notifications, prioritizes GPU.",
+            "padding": "md",
+            "icon": "sports_esports",
+            "title": "Gaming"
+          },
+          "classes": "col-span-4 row-span-3 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "profile-work-card",
+          "component": "card",
+          "grid_position": {
+            "column": 5,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "work",
+            "description": "Quiet hours, balanced power profile.",
+            "title": "Work",
+            "padding": "md"
+          },
+          "classes": "col-span-4 row-span-3 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "profile-battery-card",
+          "component": "card",
+          "grid_position": {
+            "column": 9,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "battery_saver",
+            "title": "Battery Saver",
+            "padding": "md",
+            "description": "Reduced brightness, throttled CPU."
+          },
+          "classes": "col-span-4 row-span-3 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "profile-create-btn",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "disabled": false,
+            "label": "Create Profile",
+            "variant": "primary",
+            "icon": "add"
+          },
+          "classes": "col-span-12 row-span-1",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "plugins",
+      "title": "Plugins",
+      "description": null,
+      "route": "/plugins",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "plugins-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Plugins",
+            "actions": [],
+            "icon": "extension"
+          },
+          "classes": "col-span-12 row-span-1 p-4 bg-base-100 rounded-lg shadow flex items-center justify-between",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "plugin-cache-cleaner",
+          "component": "switch",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "checked": true,
+            "label": "Cache Cleaner"
+          },
+          "classes": "col-span-12 row-span-1 flex items-center justify-between p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "plugin-registry-guard",
+          "component": "switch",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "checked": true,
+            "label": "Registry Guard"
+          },
+          "classes": "col-span-12 row-span-1 flex items-center justify-between p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "plugin-startup-tuner",
+          "component": "switch",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "checked": false,
+            "label": "Startup Tuner"
+          },
+          "classes": "col-span-12 row-span-1 flex items-center justify-between p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "plugin-net-watch",
+          "component": "switch",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Network Watch",
+            "checked": true
+          },
+          "classes": "col-span-12 row-span-1 flex items-center justify-between p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "plugin-theme-sync",
+          "component": "switch",
+          "grid_position": {
+            "column": 1,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Theme Sync",
+            "checked": false
+          },
+          "classes": "col-span-12 row-span-1 flex items-center justify-between p-4 bg-base-100 rounded-lg shadow",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "not-found-page",
+      "title": "Not Found",
+      "description": null,
+      "route": "/404",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "not-found-empty-state",
+          "component": "div",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "message": "The page you're looking for doesn't exist.",
+            "title": "Page Not Found"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "go-home-button",
+          "component": "button",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Go Home",
+            "variant": "primary"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "schema-error-page",
+      "title": "Schema Error",
+      "description": null,
+      "route": "/schema-error",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "schema-error-empty-state",
+          "component": "div",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Schema Not Found",
+            "message": "The schema could not be loaded."
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "reload-button",
+          "component": "button",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "primary",
+            "label": "Reload"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    }
+  ],
+  "shortcuts": [],
+  "modals": []
+}

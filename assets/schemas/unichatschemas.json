@@ -1,0 +1,3140 @@
+{
+  "app_id": "unichat",
+  "version": "1.0.0",
+  "pages": [
+    {
+      "id": "home",
+      "title": "Home",
+      "description": null,
+      "route": "/",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "app-header-region",
+          "component": "header",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "UniChat",
+            "platforms": [
+              {
+                "name": "Twitch",
+                "color": "#9146ff",
+                "icon": "twitch"
+              },
+              {
+                "name": "Kick",
+                "color": "#53fc18",
+                "icon": "kick"
+              },
+              {
+                "name": "YouTube",
+                "color": "#ff0000",
+                "icon": "youtube"
+              }
+            ],
+            "actions": [
+              {
+                "icon": "settings",
+                "label": "Settings",
+                "route": "/settings"
+              }
+            ],
+            "logoSrc": "assets/images/icon.png",
+            "showLogo": true
+          },
+          "classes": "glass-panel h-14 flex items-center px-6 gap-4 border-b border-white/10",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "app-sidebar-region",
+          "component": "sidebar",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "logo": "assets/images/icon.png",
+            "activeGroup": "Main",
+            "groups": [
+              {
+                "label": "Main",
+                "children": [
+                  {
+                    "label": "Dashboard",
+                    "route": "/dashboard",
+                    "icon": "chat"
+                  },
+                  {
+                    "label": "Connections",
+                    "route": "/connections",
+                    "icon": "link"
+                  },
+                  {
+                    "label": "Analytics",
+                    "route": "/analytics",
+                    "icon": "analytics"
+                  }
+                ]
+              },
+              {
+                "label": "Tools",
+                "children": [
+                  {
+                    "label": "Overlay Management",
+                    "route": "/overlay-management",
+                    "icon": "preview"
+                  },
+                  {
+                    "label": "Export",
+                    "route": "/export",
+                    "icon": "download"
+                  }
+                ]
+              },
+              {
+                "label": "Settings",
+                "children": [
+                  {
+                    "label": "Settings",
+                    "route": "/settings",
+                    "icon": "settings"
+                  },
+                  {
+                    "label": "Keyboard Shortcuts",
+                    "route": "/keyboard-shortcuts",
+                    "icon": "keyboard"
+                  },
+                  {
+                    "label": "About",
+                    "route": "/about",
+                    "icon": "info"
+                  }
+                ]
+              }
+            ],
+            "appName": "UniChat"
+          },
+          "classes": "glass-panel w-64 shrink-0 h-full border-r border-white/10",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "dashboard-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Dashboard",
+            "subtitle": "Live chat from all your platforms"
+          },
+          "classes": "mb-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "dashboard-chat-feed",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Chat Feed",
+            "variant": "glass",
+            "elevation": 1
+          },
+          "classes": "flex flex-col h-full overflow-y-auto glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "dashboard-search-modal",
+          "component": "modal",
+          "grid_position": {
+            "column": 1,
+            "row": 8,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "glass",
+            "title": "Search Messages",
+            "content": {
+              "type": "search-input",
+              "placeholder": "Search across all messages...",
+              "showFilters": true
+            },
+            "trigger": {
+              "icon": "search",
+              "label": "Search Messages"
+            }
+          },
+          "classes": "hidden",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "dashboard-pinned",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 9,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Pinned Messages",
+            "collapsible": true,
+            "icon": "push_pin",
+            "variant": "glass"
+          },
+          "classes": "max-h-[500px] glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "dashboard-shortcuts-dialog",
+          "component": "modal",
+          "grid_position": {
+            "column": 1,
+            "row": 12,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "trigger": {
+              "icon": "keyboard",
+              "label": "Shortcuts"
+            },
+            "shortcuts": [
+              {
+                "label": "Open Search",
+                "keys": "Ctrl+K"
+              },
+              {
+                "label": "Toggle Sidebar",
+                "keys": "Ctrl+B"
+              },
+              {
+                "label": "Send Message",
+                "keys": "Enter"
+              }
+            ],
+            "title": "Keyboard Shortcuts",
+            "variant": "glass"
+          },
+          "classes": "hidden",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "dashboard",
+      "title": "Dashboard",
+      "description": null,
+      "route": "/dashboard",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "dashboard-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "subtitle": "Live chat from all your platforms",
+            "title": "Dashboard"
+          },
+          "classes": "mb-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "dashboard-chat-feed",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "glass",
+            "title": "Chat Feed",
+            "elevation": 1
+          },
+          "classes": "flex flex-col h-full overflow-y-auto glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "dashboard-search-modal",
+          "component": "modal",
+          "grid_position": {
+            "column": 1,
+            "row": 8,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Search Messages",
+            "variant": "glass",
+            "trigger": {
+              "icon": "search",
+              "label": "Search Messages"
+            },
+            "content": {
+              "type": "search-input",
+              "placeholder": "Search across all messages...",
+              "showFilters": true
+            }
+          },
+          "classes": "hidden",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "dashboard-pinned",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 9,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "glass",
+            "collapsible": true,
+            "title": "Pinned Messages",
+            "icon": "push_pin"
+          },
+          "classes": "max-h-[500px] glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "dashboard-shortcuts-dialog",
+          "component": "modal",
+          "grid_position": {
+            "column": 1,
+            "row": 12,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Keyboard Shortcuts",
+            "trigger": {
+              "icon": "keyboard",
+              "label": "Shortcuts"
+            },
+            "variant": "glass",
+            "shortcuts": [
+              {
+                "label": "Open Search",
+                "keys": "Ctrl+K"
+              },
+              {
+                "label": "Toggle Sidebar",
+                "keys": "Ctrl+B"
+              },
+              {
+                "label": "Send Message",
+                "keys": "Enter"
+              }
+            ]
+          },
+          "classes": "hidden",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "connections",
+      "title": "Connections",
+      "description": null,
+      "route": "/connections",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "connections-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "subtitle": "Manage streaming platform integrations",
+            "title": "Connections"
+          },
+          "classes": "mb-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "connections-platforms-section",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "glass",
+            "elevation": 1,
+            "title": "Streaming Platforms"
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "connections-twitch-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "color": "#9146ff",
+            "title": "Twitch",
+            "variant": "glass",
+            "icon": "twitch",
+            "borderLeft": true
+          },
+          "classes": "glass-panel border-l-4",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "connections-kick-card",
+          "component": "card",
+          "grid_position": {
+            "column": 5,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "borderLeft": true,
+            "variant": "glass",
+            "icon": "kick",
+            "color": "#53fc18",
+            "title": "Kick"
+          },
+          "classes": "glass-panel border-l-4",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "connections-youtube-card",
+          "component": "card",
+          "grid_position": {
+            "column": 9,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "borderLeft": true,
+            "title": "YouTube",
+            "icon": "youtube",
+            "variant": "glass",
+            "color": "#ff0000"
+          },
+          "classes": "glass-panel border-l-4",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "connections-active-section",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "glass",
+            "elevation": 1,
+            "title": "Active Channels"
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "connections-platform-filter",
+          "component": "select",
+          "grid_position": {
+            "column": 1,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Platform",
+            "placeholder": "All Platforms",
+            "options": [
+              "All Platforms",
+              "Twitch",
+              "Kick",
+              "YouTube"
+            ]
+          },
+          "classes": "glass-input",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "connections-platform-select",
+          "component": "select",
+          "grid_position": {
+            "column": 4,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Add Channel Platform",
+            "placeholder": "Select platform",
+            "options": [
+              "Twitch",
+              "Kick",
+              "YouTube"
+            ]
+          },
+          "classes": "glass-input",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "connections-account-select",
+          "component": "select",
+          "grid_position": {
+            "column": 7,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Account",
+            "placeholder": "Select account",
+            "options": [
+              "Account 1",
+              "Account 2"
+            ]
+          },
+          "classes": "glass-input",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "connections-channel-input",
+          "component": "input",
+          "grid_position": {
+            "column": 9,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Channel",
+            "placeholder": "Enter channel name"
+          },
+          "classes": "glass-input",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "connections-add-button",
+          "component": "button",
+          "grid_position": {
+            "column": 11,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Add",
+            "variant": "primary",
+            "icon": "add"
+          },
+          "classes": "self-end",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "connections-channel-list",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 7,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "dataSource": "channels",
+            "variant": "glass",
+            "columns": [
+              "Platform",
+              "Channel",
+              "Actions"
+            ]
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "analytics",
+      "title": "Analytics",
+      "description": null,
+      "route": "/analytics",
+      "layout": "with-sidebar",
+      "elements": [
+        {
+          "id": "analytics-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Analytics",
+            "subtitle": "Chat activity insights"
+          },
+          "classes": "mb-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "analytics-time-range",
+          "component": "select",
+          "grid_position": {
+            "column": 10,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "options": [
+              "Last 24 hours",
+              "Last 7 days",
+              "Last 30 days",
+              "Last 90 days",
+              "All time"
+            ],
+            "placeholder": "Last 7 days",
+            "label": "Time Range"
+          },
+          "classes": "glass-input w-48",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "analytics-peak-viewers",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Peak Viewers",
+            "value": 0,
+            "icon": "visibility",
+            "color": "#9146ff",
+            "variant": "glass"
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "analytics-total-messages",
+          "component": "div",
+          "grid_position": {
+            "column": 4,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "glass",
+            "icon": "chat",
+            "label": "Total Chat Msgs",
+            "value": 0,
+            "color": "#53fc18"
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "analytics-new-subs",
+          "component": "div",
+          "grid_position": {
+            "column": 7,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "color": "#ff0000",
+            "variant": "glass",
+            "value": 0,
+            "label": "New Subs",
+            "icon": "person_add"
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "analytics-unique-chatters",
+          "component": "div",
+          "grid_position": {
+            "column": 10,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "groups",
+            "color": "#9146ff",
+            "label": "Unique Chatters",
+            "value": 0,
+            "variant": "glass"
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "analytics-distribution-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "glass",
+            "elevation": 1,
+            "title": "Platform Distribution"
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "analytics-twitch-progress",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "showValue": true,
+            "label": "Twitch",
+            "color": "#9146ff",
+            "value": 0,
+            "max": 100
+          },
+          "classes": "glass-panel p-4 rounded-lg",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "analytics-kick-progress",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "value": 0,
+            "label": "Kick",
+            "color": "#53fc18",
+            "max": 100,
+            "showValue": true
+          },
+          "classes": "glass-panel p-4 rounded-lg",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "analytics-youtube-progress",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 7,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "showValue": true,
+            "value": 0,
+            "max": 100,
+            "color": "#ff0000",
+            "label": "YouTube"
+          },
+          "classes": "glass-panel p-4 rounded-lg",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "with-sidebar",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "settings",
+      "title": "Settings",
+      "description": null,
+      "route": "/settings",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "settings-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Settings",
+            "subtitle": "App preferences and integrations"
+          },
+          "classes": "mb-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-dark-mode-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Dark Mode",
+            "variant": "glass"
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-dark-mode-switch",
+          "component": "switch",
+          "grid_position": {
+            "column": 12,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "color": "#9146ff",
+            "label": "Enable Dark Mode",
+            "checked": true
+          },
+          "classes": "self-center",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-aggregated-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "glass",
+            "title": "Aggregated Chat Mode",
+            "description": "Merge messages from all platforms into a single feed"
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-aggregated-switch",
+          "component": "switch",
+          "grid_position": {
+            "column": 12,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "checked": true,
+            "color": "#53fc18",
+            "label": "Aggregated Chat"
+          },
+          "classes": "self-center",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-profanity-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "glass",
+            "title": "Filter Profanity"
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-profanity-switch",
+          "component": "switch",
+          "grid_position": {
+            "column": 12,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Filter Profanity",
+            "checked": false,
+            "color": "#9146ff"
+          },
+          "classes": "self-center",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-debug-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Debug Panel",
+            "variant": "glass"
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-debug-switch",
+          "component": "switch",
+          "grid_position": {
+            "column": 12,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "checked": false,
+            "label": "Show Debug Panel",
+            "color": "#9146ff"
+          },
+          "classes": "self-center",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-text-size-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Text Size",
+            "description": "Adjust chat message text size",
+            "variant": "glass"
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-text-size-slider",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 7,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "min": 1,
+            "max": 5,
+            "label": "Text Size",
+            "color": "#9146ff",
+            "showValue": true,
+            "value": 3,
+            "step": 1
+          },
+          "classes": "w-full",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-reset-button",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 8,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Reset All Integrations",
+            "variant": "danger",
+            "icon": "restart_alt"
+          },
+          "classes": "self-end",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-blocked-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 9,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Blocked Words & Filters",
+            "variant": "glass",
+            "elevation": 1
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "settings-highlight-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 11,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "glass",
+            "title": "Highlight Rules",
+            "elevation": 1
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "export",
+      "title": "Export",
+      "description": null,
+      "route": "/export",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "export-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "subtitle": "Export your chat history",
+            "title": "Export"
+          },
+          "classes": "mb-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "export-stats-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "glass",
+            "elevation": 1,
+            "title": "Export Statistics"
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "export-stat-channels",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "glass",
+            "label": "Channels",
+            "icon": "tv",
+            "color": "#9146ff",
+            "value": 0
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "export-stat-messages",
+          "component": "div",
+          "grid_position": {
+            "column": 3,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Messages",
+            "value": 0,
+            "icon": "chat",
+            "color": "#53fc18",
+            "variant": "glass"
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "export-stat-twitch",
+          "component": "div",
+          "grid_position": {
+            "column": 6,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "value": 0,
+            "label": "Twitch",
+            "color": "#9146ff",
+            "variant": "glass"
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "export-stat-kick",
+          "component": "div",
+          "grid_position": {
+            "column": 8,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "glass",
+            "label": "Kick",
+            "value": 0,
+            "color": "#53fc18"
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "export-stat-youtube",
+          "component": "div",
+          "grid_position": {
+            "column": 10,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "YouTube",
+            "color": "#ff0000",
+            "variant": "glass",
+            "value": 0
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "export-options-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "elevation": 1,
+            "variant": "glass",
+            "title": "Export Options"
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "export-format-select",
+          "component": "select",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Export Format",
+            "options": [
+              "Plain Text (TXT)",
+              "JSON (Structured)",
+              "CSV (Spreadsheet)"
+            ],
+            "placeholder": "Plain Text (TXT)"
+          },
+          "classes": "glass-input",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "export-checkbox-timestamps",
+          "component": "checkbox",
+          "grid_position": {
+            "column": 1,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Include Timestamps",
+            "checked": true,
+            "color": "#9146ff"
+          },
+          "classes": "glass-input",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "export-checkbox-platform",
+          "component": "checkbox",
+          "grid_position": {
+            "column": 5,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "color": "#9146ff",
+            "checked": true,
+            "label": "Include Platform"
+          },
+          "classes": "glass-input",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "export-checkbox-badges",
+          "component": "checkbox",
+          "grid_position": {
+            "column": 9,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "color": "#9146ff",
+            "checked": false,
+            "label": "Include Badges"
+          },
+          "classes": "glass-input",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "export-actions-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 7,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "elevation": 1,
+            "title": "Export Actions",
+            "variant": "glass"
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "export-channel-select",
+          "component": "select",
+          "grid_position": {
+            "column": 1,
+            "row": 8,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "options": [
+              "All Channels"
+            ],
+            "label": "Channel",
+            "placeholder": "Select channel"
+          },
+          "classes": "glass-input",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "export-all-button",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 9,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "primary",
+            "icon": "download",
+            "color": "#9146ff",
+            "label": "Export All History"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "export-selected-button",
+          "component": "button",
+          "grid_position": {
+            "column": 7,
+            "row": 9,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "file_download",
+            "variant": "secondary",
+            "label": "Export Selected Channel"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "overlay-management",
+      "title": "Overlay Management",
+      "description": null,
+      "route": "/overlay-management",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "overlay-mgmt-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Overlay Management",
+            "subtitle": "Configure your stream overlay widget"
+          },
+          "classes": "mb-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-mgmt-preview-button",
+          "component": "button",
+          "grid_position": {
+            "column": 11,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Preview",
+            "variant": "primary",
+            "icon": "visibility"
+          },
+          "classes": "self-end",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-mgmt-obs-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "elevation": 1,
+            "title": "OBS Browser Source",
+            "variant": "glass",
+            "description": "Add this URL as a Browser Source in OBS"
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-mgmt-url-input",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "value": "http://localhost:1422/overlay",
+            "readonly": true,
+            "label": "Overlay URL"
+          },
+          "classes": "glass-input",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-mgmt-copy-button",
+          "component": "button",
+          "grid_position": {
+            "column": 11,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "content_copy",
+            "label": "Copy",
+            "variant": "secondary"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-mgmt-port-chip",
+          "component": "chip",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "electrical_services",
+            "label": "Port: 1422",
+            "variant": "glass"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-mgmt-widget-chip",
+          "component": "chip",
+          "grid_position": {
+            "column": 4,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Widget: chat-overlay",
+            "variant": "glass",
+            "icon": "widgets"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-mgmt-settings-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "glass",
+            "elevation": 1,
+            "title": "Settings"
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-mgmt-filter-select",
+          "component": "select",
+          "grid_position": {
+            "column": 1,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Filter",
+            "options": [
+              "All chat",
+              "Supporters only"
+            ],
+            "placeholder": "All chat"
+          },
+          "classes": "glass-input",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-mgmt-max-messages",
+          "component": "select",
+          "grid_position": {
+            "column": 7,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "placeholder": "50",
+            "options": [
+              "10",
+              "25",
+              "50",
+              "100",
+              "200"
+            ],
+            "label": "Max Messages"
+          },
+          "classes": "glass-input",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-mgmt-text-size",
+          "component": "select",
+          "grid_position": {
+            "column": 1,
+            "row": 7,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "options": [
+              "12px",
+              "14px",
+              "16px",
+              "18px",
+              "20px",
+              "24px",
+              "32px"
+            ],
+            "placeholder": "16px",
+            "label": "Text Size"
+          },
+          "classes": "glass-input",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-mgmt-animation",
+          "component": "select",
+          "grid_position": {
+            "column": 7,
+            "row": 7,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Animation",
+            "options": [
+              "None",
+              "Fade",
+              "Slide",
+              "Pop"
+            ],
+            "placeholder": "Fade"
+          },
+          "classes": "glass-input",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-mgmt-channel-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 8,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "glass",
+            "elevation": 1,
+            "title": "Channel Filter"
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-mgmt-select-all",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 9,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "size": "sm",
+            "label": "Select All",
+            "variant": "secondary"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-mgmt-deselect-all",
+          "component": "button",
+          "grid_position": {
+            "column": 4,
+            "row": 9,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "size": "sm",
+            "label": "Deselect All",
+            "variant": "secondary"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-mgmt-channel-checkbox-1",
+          "component": "checkbox",
+          "grid_position": {
+            "column": 1,
+            "row": 10,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Twitch: streamername",
+            "checked": true,
+            "color": "#9146ff"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-mgmt-channel-checkbox-2",
+          "component": "checkbox",
+          "grid_position": {
+            "column": 5,
+            "row": 10,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "checked": true,
+            "color": "#53fc18",
+            "label": "Kick: streamername"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-mgmt-channel-checkbox-3",
+          "component": "checkbox",
+          "grid_position": {
+            "column": 9,
+            "row": 10,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "color": "#ff0000",
+            "label": "YouTube: streamername",
+            "checked": true
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-mgmt-css-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 11,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Custom CSS",
+            "variant": "glass",
+            "elevation": 1
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-mgmt-css-textarea",
+          "component": "textarea",
+          "grid_position": {
+            "column": 1,
+            "row": 12,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "rows": 6,
+            "placeholder": "/* Custom overlay styles */",
+            "value": "",
+            "label": "CSS"
+          },
+          "classes": "glass-input font-mono",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-mgmt-transparent-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 14,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "glass",
+            "title": "Transparent Background"
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-mgmt-transparent-switch",
+          "component": "switch",
+          "grid_position": {
+            "column": 12,
+            "row": 14,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "checked": true,
+            "color": "#9146ff",
+            "label": "Transparent Background"
+          },
+          "classes": "self-center",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-mgmt-success-chip",
+          "component": "chip",
+          "grid_position": {
+            "column": 1,
+            "row": 15,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "check_circle",
+            "variant": "success",
+            "label": "Configuration Saved"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-mgmt-save-button",
+          "component": "button",
+          "grid_position": {
+            "column": 7,
+            "row": 15,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "primary",
+            "label": "Save Configuration",
+            "color": "#9146ff",
+            "icon": "save"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "overlay",
+      "title": "Overlay",
+      "description": null,
+      "route": "/overlay",
+      "layout": "overlay",
+      "elements": [
+        {
+          "id": "overlay-empty-state",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "chat_bubble_outline",
+            "title": "Waiting for messages",
+            "description": "Chat messages will appear here in real time"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "overlay-data-table",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "columns": [
+              "Platform",
+              "Author",
+              "Message"
+            ],
+            "transparent": true,
+            "variant": "glass",
+            "compact": true,
+            "dataSource": "overlay-messages"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "overlay",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "about",
+      "title": "About",
+      "description": null,
+      "route": "/about",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "about-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "About",
+            "subtitle": "About UniChat"
+          },
+          "classes": "mb-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "about-info-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "glass",
+            "elevation": 1,
+            "title": "UniChat"
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "about-avatar",
+          "component": "avatar",
+          "grid_position": {
+            "column": 1,
+            "row": 5,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "size": "large",
+            "src": "assets/images/icon.png",
+            "alt": "UniChat Logo",
+            "shape": "rounded"
+          },
+          "classes": "mx-auto",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "about-badge",
+          "component": "badge",
+          "grid_position": {
+            "column": 1,
+            "row": 6,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "UniChat",
+            "variant": "primary",
+            "color": "#9146ff",
+            "size": "large"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "about-version-chip",
+          "component": "chip",
+          "grid_position": {
+            "column": 1,
+            "row": 7,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "glass",
+            "icon": "info",
+            "label": "Version 0.4.0"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "about-description-chip",
+          "component": "chip",
+          "grid_position": {
+            "column": 1,
+            "row": 8,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Unified chat for Twitch, Kick, and YouTube streamers",
+            "variant": "glass"
+          },
+          "classes": "text-center",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "about-changelog-button",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 9,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "View Changelog",
+            "variant": "secondary",
+            "icon": "history"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "about-updates-card",
+          "component": "card",
+          "grid_position": {
+            "column": 1,
+            "row": 10,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Updates",
+            "variant": "glass",
+            "elevation": 1
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "about-check-updates-button",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 11,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "refresh",
+            "label": "Check for Updates",
+            "variant": "primary",
+            "color": "#9146ff"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "about-update-progress",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 12,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "color": "#9146ff",
+            "value": 0,
+            "label": "Download Progress",
+            "max": 100
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "about-up-to-date-chip",
+          "component": "chip",
+          "grid_position": {
+            "column": 1,
+            "row": 13,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Up to date",
+            "variant": "success",
+            "icon": "check_circle"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "about-update-available-chip",
+          "component": "chip",
+          "grid_position": {
+            "column": 5,
+            "row": 13,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "warning",
+            "icon": "system_update",
+            "label": "Update available"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "about-error-chip",
+          "component": "chip",
+          "grid_position": {
+            "column": 9,
+            "row": 13,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "error",
+            "label": "Update failed",
+            "variant": "danger"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "about-download-button",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 14,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Download & Install",
+            "icon": "download",
+            "variant": "secondary"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "about-install-button",
+          "component": "button",
+          "grid_position": {
+            "column": 7,
+            "row": 14,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Install Update & Restart",
+            "variant": "success",
+            "icon": "restart_alt"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "keyboard-shortcuts",
+      "title": "Keyboard Shortcuts",
+      "description": null,
+      "route": "/keyboard-shortcuts",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "kb-header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "subtitle": "Customize your keyboard shortcuts",
+            "title": "Keyboard Shortcuts"
+          },
+          "classes": "mb-2",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "kb-description-chip",
+          "component": "chip",
+          "grid_position": {
+            "column": 1,
+            "row": 2,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "edit",
+            "label": "Click on a shortcut to edit it",
+            "variant": "glass"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "kb-conflict-chip",
+          "component": "chip",
+          "grid_position": {
+            "column": 1,
+            "row": 3,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "error",
+            "variant": "danger",
+            "label": "Shortcut conflict detected"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "kb-data-table",
+          "component": "data-table",
+          "grid_position": {
+            "column": 1,
+            "row": 4,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "dataSource": "shortcuts",
+            "variant": "glass",
+            "columns": [
+              "Action",
+              "Shortcut",
+              "Edit"
+            ]
+          },
+          "classes": "glass-panel",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "kb-edit-input",
+          "component": "input",
+          "grid_position": {
+            "column": 1,
+            "row": 8,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "placeholder": "Press keys...",
+            "label": "Edit Shortcut",
+            "value": ""
+          },
+          "classes": "glass-input font-mono",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "kb-save-button",
+          "component": "button",
+          "grid_position": {
+            "column": 1,
+            "row": 9,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "success",
+            "icon": "save",
+            "label": "Save"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "kb-cancel-button",
+          "component": "button",
+          "grid_position": {
+            "column": 5,
+            "row": 9,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Cancel",
+            "icon": "close",
+            "variant": "secondary"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "kb-reset-button",
+          "component": "button",
+          "grid_position": {
+            "column": 9,
+            "row": 9,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "icon": "restart_alt",
+            "label": "Reset to defaults",
+            "variant": "secondary"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "not-found-page",
+      "title": "Not Found",
+      "description": null,
+      "route": "/404",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "not-found-empty-state",
+          "component": "div",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "message": "The page you're looking for doesn't exist.",
+            "title": "Page Not Found"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "go-home-button",
+          "component": "button",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "primary",
+            "label": "Go Home"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "schema-error-page",
+      "title": "Schema Error",
+      "description": null,
+      "route": "/schema-error",
+      "layout": "default",
+      "elements": [
+        {
+          "id": "schema-error-empty-state",
+          "component": "div",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "title": "Schema Not Found",
+            "message": "The schema could not be loaded."
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "reload-button",
+          "component": "button",
+          "grid_position": {
+            "column": 0,
+            "row": 0,
+            "col_span": 0,
+            "row_span": 0,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "variant": "primary",
+            "label": "Reload"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": "default",
+      "data_sources": null,
+      "actions": null
+    }
+  ],
+  "shortcuts": [],
+  "modals": []
+}

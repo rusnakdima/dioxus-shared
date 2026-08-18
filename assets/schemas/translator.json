@@ -1,0 +1,1178 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "app_id": "translator",
+  "version": "2.0.0",
+  "pages": [
+    {
+      "id": "translate-page",
+      "title": "Translate",
+      "description": null,
+      "route": "/",
+      "layout": "stacked",
+      "elements": [
+        {
+          "id": "header",
+          "component": "header",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 1,
+            "row_span": 1,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {},
+          "classes": "",
+          "children": [
+            {
+              "id": "header-content",
+              "component": "div",
+              "grid_position": {
+                "column": 1,
+                "row": 1,
+                "col_span": 1,
+                "row_span": 1,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {},
+              "classes": "",
+              "children": [
+                {
+                  "id": "header-title-area",
+                  "component": "div",
+                  "grid_position": {
+                    "column": 1,
+                    "row": 1,
+                    "col_span": 1,
+                    "row_span": 1,
+                    "col_start": null,
+                    "row_start": null
+                  },
+                  "props": {},
+                  "classes": "",
+                  "children": [
+                    {
+                      "id": "title",
+                      "component": "text",
+                      "grid_position": {
+                        "column": 1,
+                        "row": 1,
+                        "col_span": 1,
+                        "row_span": 1,
+                        "col_start": null,
+                        "row_start": null
+                      },
+                      "props": {
+                        "i18n_key": "app.title"
+                      },
+                      "classes": "",
+                      "children": [],
+                      "data_binding": null,
+                      "type_field": null,
+                      "visible": true,
+                      "layout": null
+                    }
+                  ],
+                  "data_binding": null,
+                  "type_field": null,
+                  "visible": true,
+                  "layout": null
+                },
+                {
+                  "id": "header-controls",
+                  "component": "div",
+                  "grid_position": {
+                    "column": 1,
+                    "row": 1,
+                    "col_span": 1,
+                    "row_span": 1,
+                    "col_start": null,
+                    "row_start": null
+                  },
+                  "props": {},
+                  "classes": "",
+                  "children": [
+                    {
+                      "id": "ui-locale-select",
+                      "component": "action-select",
+                      "grid_position": {
+                        "column": 1,
+                        "row": 1,
+                        "col_span": 1,
+                        "row_span": 1,
+                        "col_start": null,
+                        "row_start": null
+                      },
+                      "props": {
+                        "binding": "ui_locale",
+                        "options": [
+                          "en",
+                          "ru",
+                          "es",
+                          "fr",
+                          "de",
+                          "zh",
+                          "ja",
+                          "ko"
+                        ]
+                      },
+                      "classes": "",
+                      "children": [],
+                      "data_binding": null,
+                      "type_field": null,
+                      "visible": true,
+                      "layout": null
+                    },
+                    {
+                      "id": "shortcuts-btn",
+                      "component": "action-button",
+                      "grid_position": {
+                        "column": 1,
+                        "row": 1,
+                        "col_span": 1,
+                        "row_span": 1,
+                        "col_start": null,
+                        "row_start": null
+                      },
+                      "props": {
+                        "label": "⌨️",
+                        "action": "show-shortcuts",
+                        "variant": "text"
+                      },
+                      "classes": "",
+                      "children": [],
+                      "data_binding": null,
+                      "type_field": null,
+                      "visible": true,
+                      "layout": null
+                    },
+                    {
+                      "id": "theme-btn",
+                      "component": "action-button",
+                      "grid_position": {
+                        "column": 1,
+                        "row": 1,
+                        "col_span": 1,
+                        "row_span": 1,
+                        "col_start": null,
+                        "row_start": null
+                      },
+                      "props": {
+                        "label": "🌙",
+                        "variant": "text",
+                        "action": "toggle_theme"
+                      },
+                      "classes": "",
+                      "children": [],
+                      "data_binding": null,
+                      "type_field": null,
+                      "visible": true,
+                      "layout": null
+                    }
+                  ],
+                  "data_binding": null,
+                  "type_field": null,
+                  "visible": true,
+                  "layout": null
+                }
+              ],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            }
+          ],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "main-content",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 1,
+            "row_span": 1,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {},
+          "classes": "",
+          "children": [
+            {
+              "id": "translator-card",
+              "component": "card",
+              "grid_position": {
+                "column": 1,
+                "row": 1,
+                "col_span": 1,
+                "row_span": 1,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {
+                "variant": "elevated"
+              },
+              "classes": "",
+              "children": [
+                {
+                  "id": "panels-row",
+                  "component": "div",
+                  "grid_position": {
+                    "column": 1,
+                    "row": 1,
+                    "col_span": 1,
+                    "row_span": 1,
+                    "col_start": null,
+                    "row_start": null
+                  },
+                  "props": {},
+                  "classes": "flex flex-row items-center gap-4",
+                  "children": [
+                    {
+                      "id": "source-panel",
+                      "component": "div",
+                      "grid_position": {
+                        "column": 1,
+                        "row": 1,
+                        "col_span": 1,
+                        "row_span": 1,
+                        "col_start": null,
+                        "row_start": null
+                      },
+                      "props": {},
+                      "classes": "",
+                      "children": [
+                        {
+                          "id": "source-lang",
+                          "component": "action-select",
+                          "grid_position": {
+                            "column": 1,
+                            "row": 1,
+                            "col_span": 1,
+                            "row_span": 1,
+                            "col_start": null,
+                            "row_start": null
+                          },
+                          "props": {
+                            "options": [
+                              "auto",
+                              "en",
+                              "es",
+                              "fr",
+                              "de",
+                              "it",
+                              "pt",
+                              "ru",
+                              "zh",
+                              "ja",
+                              "ko"
+                            ],
+                            "binding": "source_lang"
+                          },
+                          "classes": "",
+                          "children": [],
+                          "data_binding": null,
+                          "type_field": null,
+                          "visible": true,
+                          "layout": null
+                        },
+                        {
+                          "id": "source-textarea",
+                          "component": "action-textarea",
+                          "grid_position": {
+                            "column": 1,
+                            "row": 1,
+                            "col_span": 1,
+                            "row_span": 1,
+                            "col_start": null,
+                            "row_start": null
+                          },
+                          "props": {
+                            "binding": "source_text",
+                            "rows": 6,
+                            "placeholder": "placeholder.enter"
+                          },
+                          "classes": "",
+                          "children": [],
+                          "data_binding": null,
+                          "type_field": null,
+                          "visible": true,
+                          "layout": null
+                        }
+                      ],
+                      "data_binding": null,
+                      "type_field": null,
+                      "visible": true,
+                      "layout": null
+                    },
+                    {
+                      "id": "swap-area",
+                      "component": "div",
+                      "grid_position": {
+                        "column": 1,
+                        "row": 1,
+                        "col_span": 1,
+                        "row_span": 1,
+                        "col_start": null,
+                        "row_start": null
+                      },
+                      "props": {},
+                      "classes": "",
+                      "children": [
+                        {
+                          "id": "swap-btn",
+                          "component": "action-button",
+                          "grid_position": {
+                            "column": 1,
+                            "row": 1,
+                            "col_span": 1,
+                            "row_span": 1,
+                            "col_start": null,
+                            "row_start": null
+                          },
+                          "props": {
+                            "label": "⇄",
+                            "action": "swap_languages",
+                            "variant": "outlined",
+                            "shape": "pill"
+                          },
+                          "classes": "",
+                          "children": [],
+                          "data_binding": null,
+                          "type_field": null,
+                          "visible": true,
+                          "layout": null
+                        }
+                      ],
+                      "data_binding": null,
+                      "type_field": null,
+                      "visible": true,
+                      "layout": null
+                    },
+                    {
+                      "id": "target-panel",
+                      "component": "div",
+                      "grid_position": {
+                        "column": 1,
+                        "row": 1,
+                        "col_span": 1,
+                        "row_span": 1,
+                        "col_start": null,
+                        "row_start": null
+                      },
+                      "props": {},
+                      "classes": "",
+                      "children": [
+                        {
+                          "id": "target-lang",
+                          "component": "action-select",
+                          "grid_position": {
+                            "column": 1,
+                            "row": 1,
+                            "col_span": 1,
+                            "row_span": 1,
+                            "col_start": null,
+                            "row_start": null
+                          },
+                          "props": {
+                            "binding": "target_lang",
+                            "options": [
+                              "en",
+                              "es",
+                              "fr",
+                              "de",
+                              "it",
+                              "pt",
+                              "ru",
+                              "zh",
+                              "ja",
+                              "ko"
+                            ]
+                          },
+                          "classes": "",
+                          "children": [],
+                          "data_binding": null,
+                          "type_field": null,
+                          "visible": true,
+                          "layout": null
+                        },
+                        {
+                          "id": "translated-output",
+                          "component": "action-textarea",
+                          "grid_position": {
+                            "column": 1,
+                            "row": 1,
+                            "col_span": 1,
+                            "row_span": 1,
+                            "col_start": null,
+                            "row_start": null
+                          },
+                          "props": {
+                            "rows": 6,
+                            "binding": "translated_text",
+                            "readonly": true,
+                            "placeholder": "placeholder.translation"
+                          },
+                          "classes": "",
+                          "children": [],
+                          "data_binding": null,
+                          "type_field": null,
+                          "visible": true,
+                          "layout": null
+                        }
+                      ],
+                      "data_binding": null,
+                      "type_field": null,
+                      "visible": true,
+                      "layout": null
+                    }
+                  ],
+                  "data_binding": null,
+                  "type_field": null,
+                  "visible": true,
+                  "layout": null
+                }
+              ],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            },
+            {
+              "id": "translate-row",
+              "component": "div",
+              "grid_position": {
+                "column": 1,
+                "row": 1,
+                "col_span": 1,
+                "row_span": 1,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {},
+              "classes": "",
+              "children": [
+                {
+                  "id": "translate-btn",
+                  "component": "action-button",
+                  "grid_position": {
+                    "column": 1,
+                    "row": 1,
+                    "col_span": 1,
+                    "row_span": 1,
+                    "col_start": null,
+                    "row_start": null
+                  },
+                  "props": {
+                    "size": "lg",
+                    "action": "translate",
+                    "label": "btn.translate",
+                    "variant": "google-blue"
+                  },
+                  "classes": "",
+                  "children": [],
+                  "data_binding": null,
+                  "type_field": null,
+                  "visible": true,
+                  "layout": null
+                }
+              ],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            }
+          ],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "footer",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 1,
+            "row_span": 1,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {},
+          "classes": "",
+          "children": [
+            {
+              "id": "f-privacy",
+              "component": "text",
+              "grid_position": {
+                "column": 1,
+                "row": 1,
+                "col_span": 1,
+                "row_span": 1,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {
+                "i18n_key": "footer.privacy"
+              },
+              "classes": "",
+              "children": [],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            },
+            {
+              "id": "f-terms",
+              "component": "text",
+              "grid_position": {
+                "column": 1,
+                "row": 1,
+                "col_span": 1,
+                "row_span": 1,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {
+                "i18n_key": "footer.terms"
+              },
+              "classes": "",
+              "children": [],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            },
+            {
+              "id": "f-help",
+              "component": "text",
+              "grid_position": {
+                "column": 1,
+                "row": 1,
+                "col_span": 1,
+                "row_span": 1,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {
+                "i18n_key": "footer.help"
+              },
+              "classes": "",
+              "children": [],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            }
+          ],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": null,
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "settings-page",
+      "title": "Settings",
+      "description": null,
+      "route": "/settings",
+      "layout": "stacked",
+      "elements": [
+        {
+          "id": "settings-header",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 1,
+            "row_span": 1,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {},
+          "classes": "",
+          "children": [
+            {
+              "id": "settings-title",
+              "component": "text",
+              "grid_position": {
+                "column": 1,
+                "row": 1,
+                "col_span": 1,
+                "row_span": 1,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {
+                "text": "Settings"
+              },
+              "classes": "",
+              "children": [],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            },
+            {
+              "id": "settings-theme",
+              "component": "action-button",
+              "grid_position": {
+                "column": 1,
+                "row": 1,
+                "col_span": 1,
+                "row_span": 1,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {
+                "variant": "tonal",
+                "label": "Toggle Theme",
+                "action": "toggle_theme"
+              },
+              "classes": "",
+              "children": [],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            }
+          ],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "language-settings",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 1,
+            "row_span": 1,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {},
+          "classes": "",
+          "children": [
+            {
+              "id": "default-source-lang",
+              "component": "action-select",
+              "grid_position": {
+                "column": 1,
+                "row": 1,
+                "col_span": 1,
+                "row_span": 1,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {
+                "binding": "default_source_lang",
+                "options": [
+                  "auto",
+                  "en",
+                  "es",
+                  "fr",
+                  "de",
+                  "it",
+                  "pt",
+                  "ru",
+                  "zh",
+                  "ja",
+                  "ko"
+                ]
+              },
+              "classes": "",
+              "children": [],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            },
+            {
+              "id": "default-target-lang",
+              "component": "action-select",
+              "grid_position": {
+                "column": 1,
+                "row": 1,
+                "col_span": 1,
+                "row_span": 1,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {
+                "binding": "default_target_lang",
+                "options": [
+                  "auto",
+                  "en",
+                  "es",
+                  "fr",
+                  "de",
+                  "it",
+                  "pt",
+                  "ru",
+                  "zh",
+                  "ja",
+                  "ko"
+                ]
+              },
+              "classes": "",
+              "children": [],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            }
+          ],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "save-settings-btn",
+          "component": "action-button",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 1,
+            "row_span": 1,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "label": "Save Settings",
+            "action": "save_settings"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": null,
+      "data_sources": null,
+      "actions": null
+    },
+    {
+      "id": "shortcuts-page",
+      "title": "Shortcuts",
+      "description": null,
+      "route": "/shortcuts",
+      "layout": "stacked",
+      "elements": [
+        {
+          "id": "sc-title",
+          "component": "text",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 1,
+            "row_span": 1,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "text": "Keyboard Shortcuts"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sc-list",
+          "component": "div",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 1,
+            "row_span": 1,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {},
+          "classes": "flex flex-col gap-4",
+          "children": [
+            {
+              "id": "sc-1-wrap",
+              "component": "div",
+              "grid_position": {
+                "column": 1,
+                "row": 1,
+                "col_span": 1,
+                "row_span": 1,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {},
+              "classes": "flex items-center justify-between py-2",
+              "children": [
+                {
+                  "id": "sc-1-label",
+                  "component": "text",
+                  "grid_position": {
+                    "column": 1,
+                    "row": 1,
+                    "col_span": 1,
+                    "row_span": 1,
+                    "col_start": null,
+                    "row_start": null
+                  },
+                  "props": {
+                    "i18n_key": "shortcut.translate"
+                  },
+                  "classes": "",
+                  "children": [],
+                  "data_binding": null,
+                  "type_field": null,
+                  "visible": true,
+                  "layout": null
+                },
+                {
+                  "id": "sc-1-key",
+                  "component": "div",
+                  "grid_position": {
+                    "column": 1,
+                    "row": 1,
+                    "col_span": 1,
+                    "row_span": 1,
+                    "col_start": null,
+                    "row_start": null
+                  },
+                  "props": {},
+                  "classes": "px-2 py-1 rounded text-xs font-mono",
+                  "children": [
+                    {
+                      "id": "sc-1-key-text",
+                      "component": "text",
+                      "grid_position": {
+                        "column": 1,
+                        "row": 1,
+                        "col_span": 1,
+                        "row_span": 1,
+                        "col_start": null,
+                        "row_start": null
+                      },
+                      "props": {
+                        "text": "Ctrl+Enter"
+                      },
+                      "classes": "",
+                      "children": [],
+                      "data_binding": null,
+                      "type_field": null,
+                      "visible": true,
+                      "layout": null
+                    }
+                  ],
+                  "data_binding": null,
+                  "type_field": null,
+                  "visible": true,
+                  "layout": null
+                }
+              ],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            },
+            {
+              "id": "sc-2-wrap",
+              "component": "div",
+              "grid_position": {
+                "column": 1,
+                "row": 1,
+                "col_span": 1,
+                "row_span": 1,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {},
+              "classes": "flex items-center justify-between py-2",
+              "children": [
+                {
+                  "id": "sc-2-label",
+                  "component": "text",
+                  "grid_position": {
+                    "column": 1,
+                    "row": 1,
+                    "col_span": 1,
+                    "row_span": 1,
+                    "col_start": null,
+                    "row_start": null
+                  },
+                  "props": {
+                    "i18n_key": "shortcut.swap"
+                  },
+                  "classes": "",
+                  "children": [],
+                  "data_binding": null,
+                  "type_field": null,
+                  "visible": true,
+                  "layout": null
+                },
+                {
+                  "id": "sc-2-key",
+                  "component": "div",
+                  "grid_position": {
+                    "column": 1,
+                    "row": 1,
+                    "col_span": 1,
+                    "row_span": 1,
+                    "col_start": null,
+                    "row_start": null
+                  },
+                  "props": {},
+                  "classes": "px-2 py-1 rounded text-xs font-mono",
+                  "children": [
+                    {
+                      "id": "sc-2-key-text",
+                      "component": "text",
+                      "grid_position": {
+                        "column": 1,
+                        "row": 1,
+                        "col_span": 1,
+                        "row_span": 1,
+                        "col_start": null,
+                        "row_start": null
+                      },
+                      "props": {
+                        "text": "Ctrl+S"
+                      },
+                      "classes": "",
+                      "children": [],
+                      "data_binding": null,
+                      "type_field": null,
+                      "visible": true,
+                      "layout": null
+                    }
+                  ],
+                  "data_binding": null,
+                  "type_field": null,
+                  "visible": true,
+                  "layout": null
+                }
+              ],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            },
+            {
+              "id": "sc-3-wrap",
+              "component": "div",
+              "grid_position": {
+                "column": 1,
+                "row": 1,
+                "col_span": 1,
+                "row_span": 1,
+                "col_start": null,
+                "row_start": null
+              },
+              "props": {},
+              "classes": "flex items-center justify-between py-2",
+              "children": [
+                {
+                  "id": "sc-3-label",
+                  "component": "text",
+                  "grid_position": {
+                    "column": 1,
+                    "row": 1,
+                    "col_span": 1,
+                    "row_span": 1,
+                    "col_start": null,
+                    "row_start": null
+                  },
+                  "props": {
+                    "i18n_key": "shortcut.theme"
+                  },
+                  "classes": "",
+                  "children": [],
+                  "data_binding": null,
+                  "type_field": null,
+                  "visible": true,
+                  "layout": null
+                },
+                {
+                  "id": "sc-3-key",
+                  "component": "div",
+                  "grid_position": {
+                    "column": 1,
+                    "row": 1,
+                    "col_span": 1,
+                    "row_span": 1,
+                    "col_start": null,
+                    "row_start": null
+                  },
+                  "props": {},
+                  "classes": "px-2 py-1 rounded text-xs font-mono",
+                  "children": [
+                    {
+                      "id": "sc-3-key-text",
+                      "component": "text",
+                      "grid_position": {
+                        "column": 1,
+                        "row": 1,
+                        "col_span": 1,
+                        "row_span": 1,
+                        "col_start": null,
+                        "row_start": null
+                      },
+                      "props": {
+                        "text": "Ctrl+T"
+                      },
+                      "classes": "",
+                      "children": [],
+                      "data_binding": null,
+                      "type_field": null,
+                      "visible": true,
+                      "layout": null
+                    }
+                  ],
+                  "data_binding": null,
+                  "type_field": null,
+                  "visible": true,
+                  "layout": null
+                }
+              ],
+              "data_binding": null,
+              "type_field": null,
+              "visible": true,
+              "layout": null
+            }
+          ],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ],
+      "meta": {
+        "title": null,
+        "icon": null,
+        "breadcrumb": [],
+        "description": null
+      },
+      "sections": {},
+      "layout_mode": null,
+      "data_sources": null,
+      "actions": null
+    }
+  ],
+  "shortcuts": [
+    {
+      "id": "shortcut-translate",
+      "keys": "Ctrl+Enter",
+      "action": "translate"
+    },
+    {
+      "id": "shortcut-swap",
+      "keys": "Ctrl+S",
+      "action": "swap_languages"
+    },
+    {
+      "id": "shortcut-theme",
+      "keys": "Ctrl+T",
+      "action": "toggle_theme"
+    }
+  ],
+  "modals": [
+    {
+      "id": "shortcuts-modal",
+      "title": "Keyboard Shortcuts",
+      "elements": [
+        {
+          "id": "sc-1",
+          "component": "text",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 1,
+            "row_span": 1,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "i18n_key": "shortcut.translate"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sc-2",
+          "component": "text",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 1,
+            "row_span": 1,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "i18n_key": "shortcut.swap"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        },
+        {
+          "id": "sc-3",
+          "component": "text",
+          "grid_position": {
+            "column": 1,
+            "row": 1,
+            "col_span": 1,
+            "row_span": 1,
+            "col_start": null,
+            "row_start": null
+          },
+          "props": {
+            "i18n_key": "shortcut.theme"
+          },
+          "classes": "",
+          "children": [],
+          "data_binding": null,
+          "type_field": null,
+          "visible": true,
+          "layout": null
+        }
+      ]
+    }
+  ]
+}

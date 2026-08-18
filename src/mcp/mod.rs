@@ -1,5 +1,8 @@
 //! JSON-RPC 2.0 types shared between dioxus-mcp and dioxus-plugin-mcp-bridge.
 
+#[cfg(feature = "dioxus-desktop")]
+pub mod bridge;
+
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -75,7 +78,11 @@ impl JsonRpcRequest {
         }
     }
 
-    pub fn with_id(method: impl Into<String>, id: JsonRpcId, params: Option<serde_json::Value>) -> Self {
+    pub fn with_id(
+        method: impl Into<String>,
+        id: JsonRpcId,
+        params: Option<serde_json::Value>,
+    ) -> Self {
         Self {
             jsonrpc: "2.0".to_string(),
             id: Some(id),

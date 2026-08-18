@@ -4,8 +4,6 @@
 
 pub mod auth;
 pub mod base_crud_service;
-pub mod env;
 
-pub use auth::AuthService;
+pub use auth::{global, AuthService};
 pub use base_crud_service::BaseCrudService;
-pub use env::EnvConfig;

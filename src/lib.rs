@@ -32,9 +32,9 @@ pub mod env;
 pub mod error;
 pub mod logger;
 pub mod mcp;
+pub mod rbac;
 pub mod response;
 pub mod result;
-pub mod rbac;
 pub mod schema;
 pub mod services;
 pub mod storage;
@@ -50,6 +50,13 @@ pub mod shortcuts;
 // Theme system
 pub mod themes;
 
+// Schema-driven UI engine (requires dioxus-ui feature)
+#[cfg(feature = "dioxus-ui")]
+pub mod ui_engine;
+
+// UniChat KAS handlers (for desktop applications)
+pub mod unichat;
+
 /// Get the theme CSS for embedding in Dioxus document
 ///
 /// This returns the TailwindCSS v4 theme CSS that provides:
@@ -57,38 +64,40 @@ pub mod themes;
 /// - Design tokens via @theme directive
 ///
 /// Usage in Dioxus app:
-/// ```rust,no_run
+/// ```rust,ignore
 /// rsx! {
 ///     style { {dioxus_shared::get_theme_css()} }
 ///     DynamicPage { page: schema }
 /// }
 /// ```
 pub fn get_theme_css() -> &'static str {
-    include_str!("../assets/theme.css")
+    concat!(env!("CARGO_MANIFEST_DIR"), "/assets/theme.css")
 }
 
 // Re-export commonly used types
-pub use mcp::{JsonRpcError, JsonRpcId, JsonRpcRequest, JsonRpcResponse};
-pub use entities::{EntitySchema, EntityRegistry};
-pub use algorithms::{algo_execute, Algorithm, AlgorithmRegistry, AlgorithmInput, AlgorithmOutput};
+pub use algorithms::{algo_execute, Algorithm, AlgorithmInput, AlgorithmOutput, AlgorithmRegistry};
 pub use crud::{CrudFilter, CrudQuery, CrudResult, CrudService, PaginatedResult};
+pub use entities::{EntityRegistry, EntitySchema};
 pub use env::EnvConfig;
 pub use error::AppError;
-pub use logger::{Logger, LogLevel, LogEntry};
+pub use logger::{LogEntry, LogLevel, Logger};
+pub use mcp::{JsonRpcError, JsonRpcId, JsonRpcRequest, JsonRpcResponse};
+pub use rbac::{
+    get_current_user, login, logout, rbac_assign_role_to_user, rbac_create_permission,
+    rbac_create_role, rbac_delete_permission, rbac_delete_role, rbac_get_role_permissions,
+    rbac_get_user_roles, rbac_grant_permission, rbac_list_permissions, rbac_list_roles,
+    rbac_remove_role_from_user, rbac_revoke_permission, register, Permission, Role, RolePermission,
+    Session, User, UserRole,
+};
 pub use response::{Response, Status};
 pub use result::Result;
-pub use rbac::{
-    Role, Permission, RolePermission, UserRole, Session, User, login, logout, register,
-    get_current_user, rbac_assign_role_to_user, rbac_create_permission, rbac_create_role,
-    rbac_delete_permission, rbac_delete_role, rbac_get_role_permissions, rbac_get_user_roles,
-    rbac_grant_permission, rbac_list_permissions, rbac_list_roles, rbac_remove_role_from_user,
-    rbac_revoke_permission,
-};
-pub use schema::{AppConfig, Page, Component, Layout, UiSchema, Schema, Shortcut, Modal};
+pub use schema::{AppConfig, Component, Layout, Modal, Page, Schema, Shortcut, UiSchema};
 pub use services::BaseCrudService;
-pub use storage::{
-    SignalStore, JsonProviderState, create_json_provider, create_json_provider_with_config,
-    JsonProvider, SchemaConfig, SchemaSystem, SchemaSyncState, SchemaSyncService,
-    setup_schema_system,
+pub use shortcuts::{
+    clear_shortcuts, find_shortcut_by_action, find_shortcut_by_keys, get_all_shortcuts, match_keys,
+    normalize_keys, register_shortcut, register_shortcuts,
 };
-pub use shortcuts::{register_shortcut, register_shortcuts, get_all_shortcuts, find_shortcut_by_keys, find_shortcut_by_action, clear_shortcuts, match_keys, normalize_keys};
+pub use storage::{
+    create_json_provider, create_json_provider_with_config, setup_schema_system, JsonProvider,
+    JsonProviderState, SchemaConfig, SchemaSyncService, SchemaSyncState, SchemaSystem, SignalStore,
+};

@@ -95,58 +95,69 @@ pub const DARK_TOKENS: &str = r#"
 pub mod flowbite_classes {
     /// Button variants
     pub mod button {
-        /// Primary button classes
-        pub const PRIMARY: &str = "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800";
-        
-        /// Secondary button classes
-        pub const SECONDARY: &str = "text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700";
-        
-        /// Outlined button classes
-        pub const OUTLINED: &str = "text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:text-blue-500 dark:border-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800";
-        
-        /// Text button classes
-        pub const TEXT: &str = "text-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:text-blue-500 dark:hover:bg-blue-600 dark:hover:text-white dark:focus:ring-blue-800";
-        
-        /// Tonal button classes
-        pub const TONAL: &str = "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800";
-        
-        /// Danger button classes
-        pub const DANGER: &str = "text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800";
+        pub const PRIMARY: &str = "focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800";
+        pub const SECONDARY: &str = "border focus:outline-none focus:ring-4 focus:ring-gray-100 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700";
+        pub const OUTLINED: &str = "border focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:text-blue-500 dark:border-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800";
+        pub const TEXT: &str = "focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:text-blue-500 dark:hover:bg-blue-600 dark:hover:text-white dark:focus:ring-blue-800";
+        pub const TONAL: &str = "focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800";
+        pub const DANGER: &str = "text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-700 dark:hover:bg-red-800 dark:focus:ring-red-800";
+        // Size variants
+        pub const SM: &str = "text-xs px-3 py-1.5";
+        pub const LG: &str = "text-base px-7 py-3";
     }
-    
-    /// Input classes
+
     pub mod input {
-        pub const DEFAULT: &str = "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500";
-        pub const WITH_LABEL: &str = "block mb-2 text-sm font-medium text-gray-900 dark:text-white";
+        pub const DEFAULT: &str = "text-sm rounded-lg block w-full p-2.5 ";
+        pub const WITH_LABEL: &str = "block mb-2 text-sm font-medium ";
     }
-    
-    /// Card classes
+
     pub mod card {
-        pub const DEFAULT: &str = "max-w-sm bg-white rounded-lg shadow dark:bg-gray-800 border border-gray-200 dark:border-gray-700";
-        pub const ELEVATED: &str = "max-w-sm bg-white rounded-xl shadow-lg dark:bg-gray-800";
-        pub const BORDERED: &str = "max-w-sm bg-white rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700";
+        pub const DEFAULT: &str = "max-w-sm ";
+        pub const ELEVATED: &str = "max-w-sm ";
+        pub const BORDERED: &str = "max-w-sm ";
     }
-    
-    /// Modal classes
+
     pub mod modal {
-        pub const OVERLAY: &str = "fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center";
-        pub const CONTENT: &str = "relative bg-white rounded-lg shadow dark:bg-gray-800 max-h-[90vh] overflow-y-auto";
-        pub const HEADER: &str = "flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600";
+        pub const OVERLAY: &str = "fixed inset-0 z-50 opacity-50 flex items-center justify-center";
+        pub const CONTENT: &str = "relative rounded-lg shadow max-h-[90vh] overflow-y-auto";
+        pub const HEADER: &str = "flex items-center justify-between p-4 md:p-5 border-b rounded-t ";
         pub const BODY: &str = "p-4 md:p-5";
-        pub const FOOTER: &str = "flex items-center justify-end p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600";
+        pub const FOOTER: &str = "flex items-center justify-between p-4 md:p-5 border-t rounded-b ";
     }
-    
-    /// Badge classes
+
     pub mod badge {
-        pub const DEFAULT: &str = "bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300";
-        pub const SUCCESS: &str = "bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300";
-        pub const WARNING: &str = "bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300";
-        pub const ERROR: &str = "bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300";
+        pub const DEFAULT: &str = "text-xs font-medium px-2.5 py-0.5 rounded ";
+        pub const SUCCESS: &str = "text-xs font-medium px-2.5 py-0.5 rounded bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200";
+        pub const WARNING: &str = "text-xs font-medium px-2.5 py-0.5 rounded bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200";
+        pub const ERROR: &str = "text-xs font-medium px-2.5 py-0.5 rounded bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200";
+        pub const INFO: &str = "text-xs font-medium px-2.5 py-0.5 rounded bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200";
     }
-    
-    /// Toast classes
+
     pub mod toast {
         pub const CONTAINER: &str = "fixed bottom-5 right-5 z-50 flex flex-col gap-2";
         pub const ITEM: &str = "flex items-center w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800 border border-gray-200 dark:border-gray-700";
+    }
+
+    pub mod accordion {
+        pub const DEFAULT: &str = "bg-white dark:bg-gray-900 rounded-lg";
+        pub const BORDERED: &str =
+            "bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700";
+        pub const GHOST: &str = "bg-transparent dark:bg-transparent rounded-none";
+    }
+
+    pub mod table {
+        pub const DEFAULT: &str = "min-w-full divide-y divide-gray-200 dark:divide-gray-700";
+        pub const STRIPED: &str = "min-w-full divide-y divide-gray-200 dark:divide-gray-700";
+        pub const BORDERED: &str = "min-w-full border border-gray-200 dark:border-gray-700";
+    }
+
+    pub mod progress {
+        pub const SIZE_SM: &str = "w-full";
+        pub const SIZE_MD: &str = "w-full";
+        pub const SIZE_LG: &str = "w-full";
+        pub const DEFAULT: &str = "";
+        pub const SUCCESS: &str = "";
+        pub const WARNING: &str = "";
+        pub const ERROR: &str = "";
     }
 }

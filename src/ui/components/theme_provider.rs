@@ -1,13 +1,15 @@
 //! Theme Provider component
 //!
-//! Provides theme context for Light/Dark/System mode switching with 7-variant support.
+//! Provides theme context for Light/Dark/System mode switching with 12-variant support.
 //! This is the single library-level owner of the theme signal so every page-level component
 //! inherits the same dark/light/variant state without app-level duplication.
 
 #[cfg(feature = "dioxus-ui")]
-use dioxus::prelude::*;
-#[cfg(feature = "dioxus-ui")]
 use crate::themes::{generate_css_vars, ThemeMode, ThemeVariant};
+#[cfg(all(feature = "dioxus-ui", target_arch = "wasm32"))]
+use crate::ui::flowbite::init_flowbite_css;
+#[cfg(feature = "dioxus-ui")]
+use dioxus::prelude::*;
 
 #[cfg(feature = "dioxus-ui")]
 #[derive(Clone, Copy)]
@@ -44,6 +46,11 @@ fn variant_css_class(variant: ThemeVariant) -> &'static str {
         ThemeVariant::NeoBrutalism => "neo-brutalism",
         ThemeVariant::Brutalism => "brutalism",
         ThemeVariant::Neumorphism => "neumorphism",
+        ThemeVariant::Nord => "nord",
+        ThemeVariant::TokyoNight => "tokyo-night",
+        ThemeVariant::Catppuccin => "catppuccin",
+        ThemeVariant::RosePine => "rose-pine",
+        ThemeVariant::Linear => "linear",
     }
 }
 
@@ -65,13 +72,55 @@ pub fn ThemeProvider(
 ) -> Element {
     let mode = use_signal(|| initial_mode);
     let variant = use_signal(|| initial_variant);
-    let is_dark = use_memo(move || matches!(*mode.read(), ThemeMode::Dark));
+
+    let mut system_is_dark = use_signal(|| false);
+
+    use_effect(move || {
+        // Initialize Flowbite CSS once on startup
+        #[cfg(target_arch = "wasm32")]
+        init_flowbite_css();
+
+        #[cfg(target_arch = "wasm32")]
+        {
+            let is_dark = web_sys::window()
+                .and_then(|w| w.match_media("(prefers-color-scheme: dark)").ok())
+                .flatten()
+                .map(|m| m.matches())
+                .unwrap_or(false);
+            system_is_dark.set(is_dark);
+        }
+        #[cfg(not(target_arch = "wasm32"))]
+        {
+            use std::env;
+
+            // On native targets (desktop), detect dark mode via environment variables
+            // that are set by popular desktop environments and terminal emulators.
+            let is_dark = env::var("XDG_CURRENT_DESKTOP")
+                .map(|v| {
+                    v.to_lowercase().contains("dark") || v.to_lowercase().contains("gnome-dark")
+                })
+                .unwrap_or(false)
+                || env::var("COLORFGBG")
+                    .map(|v| v.ends_with(";12") || v.ends_with(";14"))
+                    .unwrap_or(false)
+                || env::var("GTK_THEME")
+                    .map(|v| v.to_lowercase().contains("dark"))
+                    .unwrap_or(false);
+
+            system_is_dark.set(is_dark);
+        }
+    });
+
+    let is_dark = use_memo(move || match *mode.read() {
+        ThemeMode::Dark => true,
+        ThemeMode::Light => false,
+        ThemeMode::System => *system_is_dark.read(),
+    });
 
     provide_context(ThemeState { mode, variant });
 
-    let css_vars = use_memo(move || {
-        generate_css_vars(*variant.read(), *mode.read())
-    });
+    let css_vars =
+        use_memo(move || generate_css_vars(*variant.read(), *mode.read(), *system_is_dark.read()));
 
     rsx! {
         div {
@@ -119,9 +168,13 @@ pub fn resolve_is_dark(mode: ThemeMode) -> bool {
 #[cfg(feature = "dioxus-ui")]
 #[component]
 pub fn ThemeToggle() -> Element {
+    let text_secondary = "var(--color-text-secondary)";
+    let bg_surface = "var(--color-bg-surface)";
+
     rsx! {
         button {
-            class: "text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-sm p-2",
+            class: "rounded-lg text-sm p-2",
+            style: "color: {text_secondary}; background-color: {bg_surface};",
             r#type: "button",
             title: "Toggle theme",
             onclick: move |_| {

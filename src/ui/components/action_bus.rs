@@ -6,8 +6,8 @@
 //! - Page navigation
 //! - Modal dialog management
 
-use std::collections::{HashMap, VecDeque};
 use dioxus::prelude::*;
+use std::collections::{HashMap, VecDeque};
 
 use crate::themes::ThemeMode;
 
@@ -61,7 +61,9 @@ impl ActionBus {
 
     /// Set a bound form field value
     pub fn set_binding(&mut self, key: &str, value: &str) {
-        self.bindings.write().insert(key.to_string(), value.to_string());
+        self.bindings
+            .write()
+            .insert(key.to_string(), value.to_string());
     }
 
     /// Get a bound form field value
@@ -125,7 +127,9 @@ impl ActionBus {
 
     /// Check if a binding exists and is non-empty
     pub fn has_value(&self, key: &str) -> bool {
-        self.get_binding(key).map(|v| !v.is_empty()).unwrap_or(false)
+        self.get_binding(key)
+            .map(|v| !v.is_empty())
+            .unwrap_or(false)
     }
 
     /// Get current route value

@@ -4,15 +4,14 @@
 //! Styled with Flowbite/TailwindCSS classes
 
 #[cfg(feature = "dioxus-ui")]
-use dioxus::prelude::*;
+use crate::themes::tokens::flowbite_classes::button as btn;
 #[cfg(feature = "dioxus-ui")]
 use dioxus::events::MouseEvent;
 #[cfg(feature = "dioxus-ui")]
-use crate::themes::tokens::flowbite_classes::button as btn;
+use dioxus::prelude::*;
 
 /// Button style variants
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
-#[derive(Default)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 pub enum ButtonVariant {
     #[default]
     Solid,
@@ -21,7 +20,6 @@ pub enum ButtonVariant {
     Tonal,
     Danger,
 }
-
 
 impl ButtonVariant {
     pub fn as_classes(&self) -> &'static str {
@@ -47,31 +45,33 @@ pub fn Button(
     on_click: EventHandler<MouseEvent>,
 ) -> Element {
     let base_classes = variant.as_classes();
-    let disabled_classes = if disabled { "opacity-50 cursor-not-allowed" } else { "" };
-    
+    let disabled_classes = if disabled {
+        "opacity-50 cursor-not-allowed"
+    } else {
+        ""
+    };
+
     let classes = format!("{} {} {}", base_classes, disabled_classes, class)
         .trim()
         .to_string();
-    
+
     rsx! {
         button {
             r#type: "button",
             class: "{classes}",
             disabled: disabled,
             onclick: move |evt| { on_click.call(evt); },
-            
+
             if loading {
                 span {
                     class: "me-2 inline-block h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent"
                 }
             }
-            
+
             "{label}"
         }
     }
 }
-
-
 
 /// Struct-based button for non-Dioxus usage
 #[derive(Debug, Clone)]
@@ -102,22 +102,22 @@ impl ButtonConfig {
             ..Default::default()
         }
     }
-    
+
     pub fn variant(mut self, variant: ButtonVariant) -> Self {
         self.variant = variant;
         self
     }
-    
+
     pub fn disabled(mut self, disabled: bool) -> Self {
         self.disabled = disabled;
         self
     }
-    
+
     pub fn loading(mut self, loading: bool) -> Self {
         self.loading = loading;
         self
     }
-    
+
     pub fn class(mut self, class: impl Into<String>) -> Self {
         self.class = class.into();
         self

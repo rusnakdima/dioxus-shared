@@ -3,9 +3,11 @@
 //! Styled with Flowbite/TailwindCSS classes
 
 #[cfg(feature = "dioxus-ui")]
-use dioxus::prelude::*;
+use crate::themes::tokens::flowbite_classes::input as input_classes;
 #[cfg(feature = "dioxus-ui")]
 use dioxus::events::FormEvent;
+#[cfg(feature = "dioxus-ui")]
+use dioxus::prelude::*;
 
 // ============================================================================
 // Input
@@ -29,31 +31,43 @@ pub fn Input(
     } else {
         ""
     };
-    
+
     let input_id = format!("input-{}", label.replace(" ", "-").to_lowercase());
-    
+
     rsx! {
         div {
             class: "mb-6",
-            
+
             if !label.is_empty() {
                 label {
-                    class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white",
+                    class: "{input_classes::WITH_LABEL}",
                     r#for: "{input_id}",
                     "{label}"
                 }
             }
-            
-            input {
-                id: "{input_id}",
-                r#type: "{input_type}",
-                class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 {error_class} {class}",
-                placeholder: "{placeholder}",
-                disabled: disabled,
-                value: "{value}",
-                oninput: move |evt| { on_input.call(evt); },
+
+            if input_type == "textarea" {
+                textarea {
+                    id: "{input_id}",
+                    class: "{input_classes::DEFAULT} {error_class} {class}",
+                    placeholder: "{placeholder}",
+                    rows: 4,
+                    disabled: disabled,
+                    oninput: move |evt| { on_input.call(evt); },
+                    "{value}"
+                }
+            } else {
+                input {
+                    id: "{input_id}",
+                    r#type: "{input_type}",
+                    class: "{input_classes::DEFAULT} {error_class} {class}",
+                    placeholder: "{placeholder}",
+                    disabled: disabled,
+                    value: "{value}",
+                    oninput: move |evt| { on_input.call(evt); },
+                }
             }
-            
+
             if let Some(error_msg) = &error {
                 p {
                     class: "mt-1 text-sm text-red-600 dark:text-red-500",
@@ -86,31 +100,31 @@ pub fn Textarea(
     } else {
         ""
     };
-    
+
     let textarea_id = format!("textarea-{}", label.replace(" ", "-").to_lowercase());
-    
+
     rsx! {
         div {
             class: "mb-6",
-            
+
             if !label.is_empty() {
                 label {
-                    class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white",
+                    class: "{input_classes::WITH_LABEL}",
                     r#for: "{textarea_id}",
                     "{label}"
                 }
             }
-            
+
             textarea {
                 id: "{textarea_id}",
-                class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 {error_class} {class}",
+                class: "{input_classes::DEFAULT} {error_class} {class}",
                 placeholder: "{placeholder}",
                 rows: rows,
                 disabled: disabled,
                 oninput: move |evt| { on_input.call(evt); },
                 "{value}"
             }
-            
+
             if let Some(error_msg) = &error {
                 p {
                     class: "mt-1 text-sm text-red-600 dark:text-red-500",
@@ -141,7 +155,7 @@ impl SelectOption {
             disabled: false,
         }
     }
-    
+
     pub fn disabled(mut self) -> Self {
         self.disabled = true;
         self
@@ -161,25 +175,25 @@ pub fn Select(
     on_change: EventHandler<String>,
 ) -> Element {
     let select_id = format!("select-{}", label.replace(" ", "-").to_lowercase());
-    
+
     rsx! {
         div {
             class: "mb-6",
-            
+
             if !label.is_empty() {
                 label {
-                    class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white",
+                    class: "{input_classes::WITH_LABEL}",
                     r#for: "{select_id}",
                     "{label}"
                 }
             }
-            
+
             select {
                 id: "{select_id}",
-                class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 {class}",
+                class: "{input_classes::DEFAULT} {class}",
                 disabled: disabled,
                 onchange: move |evt| { on_change.call(evt.value().to_string()); },
-                
+
                 // Placeholder option
                 option {
                     value: "",
@@ -187,7 +201,7 @@ pub fn Select(
                     selected: value.is_empty(),
                     "{placeholder}"
                 }
-                
+
                 // Options
                 for opt in options {
                     option {

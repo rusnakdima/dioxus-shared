@@ -3,20 +3,18 @@
 //! Provides card containers with different styles
 
 #[cfg(feature = "dioxus-ui")]
-use dioxus::prelude::*;
-#[cfg(feature = "dioxus-ui")]
 use crate::themes::tokens::flowbite_classes::card as card_classes;
+#[cfg(feature = "dioxus-ui")]
+use dioxus::prelude::*;
 
 /// Card style variants
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
-#[derive(Default)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 pub enum CardVariant {
     #[default]
     Default,
     Elevated,
     Bordered,
 }
-
 
 #[cfg(feature = "dioxus-ui")]
 impl CardVariant {
@@ -37,25 +35,27 @@ pub fn Card(
     subtitle: String,
     variant: CardVariant,
     class: String,
+    children: Element,
 ) -> Element {
     let base_classes = variant.as_classes();
     let classes = format!("{} {}", base_classes, class).trim().to_string();
-    
+
     rsx! {
         div {
             class: "{classes}",
-            
+            style: "background-color: var(--color-bg-surface);",
+
             if !title.is_empty() || !subtitle.is_empty() {
                 div {
                     class: "px-4 py-3 sm:px-6 sm:py-4",
-                    
+
                     if !title.is_empty() {
                         h3 {
                             class: "text-lg font-medium text-gray-900 dark:text-white",
                             "{title}"
                         }
                     }
-                    
+
                     if !subtitle.is_empty() {
                         p {
                             class: "mt-1 text-sm text-gray-500 dark:text-gray-400",
@@ -64,12 +64,10 @@ pub fn Card(
                     }
                 }
             }
-            
+
             div {
                 class: "px-4 py-3 sm:px-6 sm:py-4",
-                
-                // Card content slot - simplified, no children support in this version
-                // For children, we'd need to use a different approach
+                {children}
             }
         }
     }
@@ -102,17 +100,17 @@ impl CardConfig {
             ..Default::default()
         }
     }
-    
+
     pub fn subtitle(mut self, subtitle: impl Into<String>) -> Self {
         self.subtitle = subtitle.into();
         self
     }
-    
+
     pub fn variant(mut self, variant: CardVariant) -> Self {
         self.variant = variant;
         self
     }
-    
+
     pub fn class(mut self, class: impl Into<String>) -> Self {
         self.class = class.into();
         self

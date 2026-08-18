@@ -10,32 +10,37 @@
 //! - Supports modal dialogs via ActionBus
 
 #[cfg(feature = "dioxus-ui")]
-use dioxus::prelude::*;
-#[cfg(feature = "dioxus-ui")]
-use crate::schema::{Schema, Modal as SchemaModal};
-#[cfg(feature = "dioxus-ui")]
 use super::action_bus::ActionBus;
 #[cfg(feature = "dioxus-ui")]
+use crate::schema::{Modal as SchemaModal, Schema};
+#[cfg(feature = "dioxus-ui")]
 use crate::shortcuts::{register_shortcuts, ShortcutDef};
+#[cfg(feature = "dioxus-ui")]
+use dioxus::prelude::*;
 
 #[cfg(feature = "dioxus-ui")]
 #[component]
 pub fn DynamicPage(schema: Schema, initial_route: String, bus: ActionBus) -> Element {
     let current_route = bus.current_route();
-    let current_modal_signal = bus.current_modal.clone();
+    let current_modal_signal = bus.current_modal;
 
     use_effect(move || {
-        let shortcut_defs: Vec<ShortcutDef> = schema.shortcuts.iter().map(|s| {
-            ShortcutDef {
+        let shortcut_defs: Vec<ShortcutDef> = schema
+            .shortcuts
+            .iter()
+            .map(|s| ShortcutDef {
                 id: s.id.clone(),
                 keys: s.keys.clone(),
                 action: s.action.clone(),
-            }
-        }).collect();
+            })
+            .collect();
         register_shortcuts(&shortcut_defs);
     });
 
-    let page = schema.pages.iter().find(|p| p.route == current_route)
+    let page = schema
+        .pages
+        .iter()
+        .find(|p| p.route == current_route)
         .or_else(|| schema.pages.first());
 
     let get_modal_content = |modal_id: &str| -> Option<&SchemaModal> {
@@ -43,14 +48,16 @@ pub fn DynamicPage(schema: Schema, initial_route: String, bus: ActionBus) -> Ele
     };
 
     let modal_element = if let Some(modal_id) = current_modal_signal.read().as_deref() {
-        get_modal_content(modal_id).map(|modal| {
-            rsx! {
-                ModalOverlay {
-                    modal: modal.clone(),
-                    bus: bus.clone()
+        get_modal_content(modal_id)
+            .map(|modal| {
+                rsx! {
+                    ModalOverlay {
+                        modal: modal.clone(),
+                        bus: bus.clone()
+                    }
                 }
-            }
-        }).transpose()?
+            })
+            .transpose()?
     } else {
         None
     };
